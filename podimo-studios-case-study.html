@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podimo Studios · Case Study · Nicolai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --cream-2:#F5F6F7;
+    --ink:#1D1D1F;
+    --ink-soft:#6E6E73;
+    --clay:#3D3BF3;
+    --hair: rgba(29,29,31,0.10);
+    --hair-strong: rgba(29,29,31,0.22);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:'Instrument Sans', sans-serif; -webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--clay); color:#fff;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
+  @media (max-width:760px){ .wrap{padding:0 22px;} }
+
+  .topbar-outer{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.88); backdrop-filter:saturate(160%) blur(14px); -webkit-backdrop-filter:saturate(160%) blur(14px); border-bottom:1px solid var(--hair);}
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .mark{
+    display:flex; align-items:center; justify-content:center;
+    width:34px; height:34px;
+    background:var(--ink); color:#fff;
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:600; font-size:13px; letter-spacing:0.02em;
+    transition:background .25s ease;
+  }
+  a.mark:hover{background:var(--clay);}
+  .back{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); transition:color .25s ease;}
+  .back:hover{color:var(--clay);}
+  @media (max-width:760px){
+    .topbar{padding:12px 0;}
+    .mark{width:30px; height:30px; font-size:12px;}
+  }
+
+  .case-hero{padding:90px 0 70px;}
+  .eyebrow{display:block; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--clay); margin-bottom:24px;}
+  h1{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 6.4vw, 84px); line-height:1.0; letter-spacing:-0.03em; max-width:960px;}
+  h1 em{font-style:normal; color:var(--clay);}
+  .dek{font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:560px; margin-top:28px;}
+
+  .meta{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:36px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); margin-bottom:64px;}
+  @media (max-width:760px){ .meta{grid-template-columns:1fr 1fr;} }
+  .meta div span{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;}
+  .meta div b{font-weight:500; font-size:14px;}
+
+  .frame{background:var(--cream-2); border:1px solid var(--hair); overflow:hidden; margin-bottom:64px;}
+  .frame.wide{aspect-ratio:16/8;}
+  .frame.std{aspect-ratio:16/10;}
+  .frame img{width:100%; height:100%; object-fit:cover;}
+  .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
+  @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
+  .frame-pair .frame{margin-bottom:0;}
+
+  section.block{padding:0 0 72px;}
+  .block h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px; max-width:640px;}
+  .block p{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:18px;}
+  .block p b{color:var(--ink); font-weight:500;}
+
+  .touchpoints{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px;}
+  .touchpoint{font-size:12px; letter-spacing:0.04em; padding:8px 16px; border:1px solid var(--hair-strong); color:var(--ink-soft);}
+
+  .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
+  .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
+  @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
+  .stat-lockup b, .stat-lockup i{display:block; font-family:'Bricolage Grotesque', sans-serif; font-style:normal; font-weight:500; font-size:clamp(40px, 6vw, 76px); letter-spacing:-0.03em; line-height:1.04;}
+  .stat-lockup b{color:var(--clay);}
+  .stat-lockup i{color:var(--ink);}
+  .stat-note{font-size:14px; font-weight:500; color:var(--ink-soft); justify-self:end; max-width:280px; line-height:1.65;}
+  @media (max-width:760px){ .stat-note{justify-self:start;} }
+
+  section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
+  .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
+  .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
+  .results-dark .stats{border-top:1px solid rgba(255,255,255,0.16); margin-bottom:0;}
+  .results-dark .stat-row{border-bottom:1px solid rgba(255,255,255,0.16);}
+  .results-dark .stat-lockup i{color:#fff;}
+  .results-dark .stat-note{color:rgba(255,255,255,0.85);}
+
+  .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
+  .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .next span{display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7B79FF; margin-bottom:14px;}
+  .next a h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(30px, 4.6vw, 54px); letter-spacing:-0.025em; transition:opacity .25s ease;}
+  .next a:hover h2{opacity:0.8;}
+  .next .all{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:4px;}
+</style>
+</head>
+<body>
+
+  <header class="topbar-outer">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="mark" href="index.html">NG</a>
+        <a class="back" href="index.html#work">← All Work</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="case-hero">
+      <span class="eyebrow">Case 05 · Sub-Brand Identity · Brand Systems · 2026</span>
+      <h1>Podimo Studios. <em>Creativity, not consumption.</em></h1>
+      <p class="dek">When a platform grows this fast, the brand becomes the bottleneck. Podimo Studios spins the production unit out as a creator-facing sub-brand: built for the people who make the shows, rooted in the master brand that carries them.</p>
+    </header>
+
+    <div class="meta">
+      <div><span>Role</span><b>VP, Global Brand &amp; Creative</b></div>
+      <div><span>Year</span><b>2026</b></div>
+      <div><span>Lane</span><b>Brand Systems · Sub-brand</b></div>
+      <div><span>Recognition</span><b>CC Shortlist</b></div>
+    </div>
+
+    <div class="frame wide">
+      <img src="assets/podimostudios_case-hero.jpg" alt="Podimo Studios identity hero">
+    </div>
+
+    <section class="block">
+      <h2>Why the studio needed its own name</h2>
+      <p><b>Podimo was growing at Mach 5 speeds, and the master brand was doing two jobs at once:</b> selling listening to audiences and selling production partnership to creators. To avoid a brand bottleneck, the production unit was spun out as its own sub-brand, one that resonates with creators looking for production support.</p>
+      <p>The strategic shift is a single word swap: Podimo Studios communicates creativity rather than consumption. It speaks to the people who make, while staying visibly rooted in the master brand that reaches the people who listen.</p>
+    </section>
+
+    <section class="block">
+      <h2>A logotype that sets up like a studio</h2>
+      <p>The centerpiece is the logo itself. Each letter can be stacked and arranged in any configuration, a direct reflection of how Podimo Studios tailors its production setup to each creator. No two setups alike, every one unmistakably the same studio.</p>
+      <p>The perfect structure for creativity, conversations, and quality content. Welcome to the studios.</p>
+    </section>
+
+    <div class="frame-pair">
+      <div class="frame std"><img src="assets/podimostudios/slide-01.jpg" alt="Podimo Studios logotype arrangements"></div>
+      <div class="frame std"><img src="assets/podimostudios/slide-02.jpg" alt="Podimo Studios identity applications"></div>
+    </div>
+
+    <section class="block">
+      <h2>One system, two voices</h2>
+      <p>Within the Brand &amp; Creative mandate, this is the Brand Systems lane doing its job: the master brand and its sub-brands built as one coherent system that can open a new voice for a new audience without fracturing. The consumer brand keeps selling stories; Studios sells the room they get made in.</p>
+    </section>
+
+    <div class="frame std">
+      <img src="assets/podimostudios/slide-03.jpg" alt="Podimo Studios brand system overview">
+    </div>
+  </div>
+
+  <section class="results-dark">
+    <div class="wrap">
+      <h2>The shift</h2>
+      <p>A brand identity's results are strategic before they are numeric. What this one changed:</p>
+      <div class="stats">
+        <div class="stat-row">
+          <div class="stat-lockup"><b>Creativity</b><i>Not consumption*</i></div>
+          <span class="stat-note">*Repositioning the offer for the people who make shows, not just the people who hear them</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>One</b><i>Master brand*</i></div>
+          <span class="stat-note">*Every arrangement of the logotype stays rooted in Podimo's system</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <div>
+        <span>Next Case · 06</span>
+        <a href="dag-en-nacht-case-study.html"><h2>Dag en Nacht</h2></a>
+      </div>
+      <a class="all" href="index.html#work">All Work</a>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer on Podimo · Case Study · Nicolai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --cream-2:#F5F6F7;
+    --ink:#1D1D1F;
+    --ink-soft:#6E6E73;
+    --clay:#3D3BF3;
+    --hair: rgba(29,29,31,0.10);
+    --hair-strong: rgba(29,29,31,0.22);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:'Instrument Sans', sans-serif; -webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--clay); color:#fff;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
+  @media (max-width:760px){ .wrap{padding:0 22px;} }
+
+  .topbar-outer{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.88); backdrop-filter:saturate(160%) blur(14px); -webkit-backdrop-filter:saturate(160%) blur(14px); border-bottom:1px solid var(--hair);}
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .mark{
+    display:flex; align-items:center; justify-content:center;
+    width:34px; height:34px;
+    background:var(--ink); color:#fff;
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:600; font-size:13px; letter-spacing:0.02em;
+    transition:background .25s ease;
+  }
+  a.mark:hover{background:var(--clay);}
+  .back{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); transition:color .25s ease;}
+  .back:hover{color:var(--clay);}
+  @media (max-width:760px){
+    .topbar{padding:12px 0;}
+    .mark{width:30px; height:30px; font-size:12px;}
+  }
+
+  .case-hero{padding:90px 0 70px;}
+  .eyebrow{display:block; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--clay); margin-bottom:24px;}
+  h1{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 6.4vw, 84px); line-height:1.0; letter-spacing:-0.03em; max-width:960px;}
+  h1 em{font-style:normal; color:var(--clay);}
+  .dek{font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:560px; margin-top:28px;}
+
+  .meta{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:36px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); margin-bottom:64px;}
+  @media (max-width:760px){ .meta{grid-template-columns:1fr 1fr;} }
+  .meta div span{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;}
+  .meta div b{font-weight:500; font-size:14px;}
+
+  .frame{background:var(--cream-2); border:1px solid var(--hair); overflow:hidden; margin-bottom:64px;}
+  .frame.wide{aspect-ratio:16/8;}
+  .frame.std{aspect-ratio:16/10;}
+  .frame img{width:100%; height:100%; object-fit:cover;}
+  .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
+  @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
+  .frame-pair .frame{margin-bottom:0;}
+
+  section.block{padding:0 0 72px;}
+  .block h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px; max-width:640px;}
+  .block p{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:18px;}
+  .block p b{color:var(--ink); font-weight:500;}
+
+  .funnel{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:44px;}
+  @media (max-width:860px){ .funnel{grid-template-columns:1fr;} }
+  .funnel-step{border-top:2px solid var(--clay); padding-top:22px;}
+  .funnel-step span{display:block; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--clay); margin-bottom:12px;}
+  .funnel-step h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:19px; letter-spacing:-0.01em; margin-bottom:10px;}
+  .funnel-step p{font-size:14px; line-height:1.7; color:var(--ink-soft);}
+
+  .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
+  .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
+  @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
+  .stat-lockup b, .stat-lockup i{display:block; font-family:'Bricolage Grotesque', sans-serif; font-style:normal; font-weight:500; font-size:clamp(40px, 6vw, 76px); letter-spacing:-0.03em; line-height:1.04;}
+  .stat-lockup b{color:var(--clay);}
+  .stat-lockup i{color:var(--ink);}
+  .stat-note{font-size:14px; font-weight:500; color:var(--ink-soft); justify-self:end; max-width:280px; line-height:1.65;}
+  @media (max-width:760px){ .stat-note{justify-self:start;} }
+
+  section.bleed{margin:0 0 72px;}
+  section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
+  .frame-trio{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;}
+  @media (max-width:860px){ .frame-trio{grid-template-columns:1fr;} }
+  .frame-trio .frame{margin-bottom:0; aspect-ratio:4/5;}
+
+  section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
+  .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
+  .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
+  .results-dark .stats{border-top:1px solid rgba(255,255,255,0.16); margin-bottom:0;}
+  .results-dark .stat-row{border-bottom:1px solid rgba(255,255,255,0.16);}
+  .results-dark .stat-lockup i{color:#fff;}
+  .results-dark .stat-note{color:rgba(255,255,255,0.85);}
+
+  .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
+  .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .next span{display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7B79FF; margin-bottom:14px;}
+  .next a h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(30px, 4.6vw, 54px); letter-spacing:-0.025em; transition:opacity .25s ease;}
+  .next a:hover h2{opacity:0.8;}
+  .next .all{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:4px;}
+</style>
+</head>
+<body>
+
+  <header class="topbar-outer">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="mark" href="index.html">NG</a>
+        <a class="back" href="index.html#work">← All Work</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="case-hero">
+      <span class="eyebrow">Case 01 · Key Moment · Full-Funnel Campaign · 2026</span>
+      <h1>Summer on Podimo. <em>Just wait till you hear this.</em></h1>
+      <p class="dek">Podimo's annual summer campaign, rebuilt as a full-funnel system: one global creative platform, executed and adapted locally across markets, carrying a single idea from first scroll-stop to subscription.</p>
+    </header>
+
+    <div class="meta">
+      <div><span>Role</span><b>VP, Global Brand &amp; Creative</b></div>
+      <div><span>Year</span><b>2026</b></div>
+      <div><span>Audience</span><b>25-45, all markets</b></div>
+      <div><span>Channels</span><b>Video, social, paid, web, CRM, in-app</b></div>
+    </div>
+
+    <div class="frame wide">
+      <img src="assets/summer/case-hero.jpg" alt="Summer on Podimo campaign hero">
+    </div>
+
+    <section class="block">
+      <h2>The brief: a dip, a peak, and a squeeze</h2>
+      <p><b>Every summer, Podimo's supply and demand move in opposite directions.</b> Shows go on seasonal breaks or run pre-recorded episodes, so timely releases thin out, exactly as listening peaks, with audiences spending more time on long-form content and exploring new categories through holidays and travel. And into that gap, audiobook competitors push aggressive summer offers to capture the demand.</p>
+      <p>The strategic answer: don't cede the season. Proactively engage users, position Podimo as the place where the summer's greatest conversations take place, and promote audiobooks as the second layer, meeting the long-form demand the season creates.</p>
+    </section>
+
+    <section class="block">
+      <h2>The idea: a good story is always worth sharing</h2>
+      <p><b>Podimo has no shortage of great stories. The campaign's job was to get people talking about the best ones.</b> The concept, "Just wait till you hear this," turns the most natural behavior around great audio, telling someone about it, into the creative engine for the entire campaign.</p>
+      <p>Rather than a single hero film, the platform was designed as a flexible global framework: a core concept, messaging architecture, and design system built centrally, then handed to local markets to surface the content that would genuinely resonate with their audiences.</p>
+      <p>Within Podimo's campaign portfolio model, Summer is the yearly <b>key moment</b>: the seasonal window where the brand steps into the cultural conversation, built in close collaboration with social and lifecycle teams, and carried all the way down the funnel.</p>
+    </section>
+  </div>
+
+  <section class="bleed">
+    <img src="assets/summer/slide-01.jpg" alt="Summer on Podimo key art: Just wait till you hear this">
+  </section>
+
+  <div class="wrap">
+
+    <section class="block">
+      <h2>One idea, engineered down the funnel</h2>
+      <p>The same creative idea carries through every stage, with consistent messaging, look, and feel across all channels and markets. What changes is the job each layer does.</p>
+      <div class="funnel">
+        <div class="funnel-step">
+          <span>Top of Funnel · Awareness</span>
+          <h3>Stop the scroll</h3>
+          <p>Social-first films of everyday people telling a friend about a story they heard on Podimo. Locally cast, locally told, executed directly against the global concept.</p>
+        </div>
+        <div class="funnel-step">
+          <span>Mid Funnel · Consideration</span>
+          <h3>Step inside the story</h3>
+          <p>Audiences are brought inside Podimo's studios to experience a great story unfolding, cut to end on a cliffhanger that only the platform can resolve.</p>
+        </div>
+        <div class="funnel-step">
+          <span>Lower Funnel · Conversion</span>
+          <h3>An offer hard to refuse</h3>
+          <p>Direct response creative built from the same system: same voice, same world, now paired with an offer designed to convert the curiosity the funnel created.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="frame-pair">
+      <div class="frame std"><img src="assets/summer/slide-02.jpg" alt="Local market film, telling a friend"></div>
+      <div class="frame std"><img src="assets/summer/slide-03.jpg" alt="Local market film, second market"></div>
+    </div>
+
+    <section class="block">
+      <h2>Built as a system, not a campaign</h2>
+      <p>The framework was designed so that every market executes from the same strategic and visual core while owning its local expression, with messaging calibrated to each market's brand maturity: newer markets lead with clear value propositions, established markets lead with brand. Rollout was staggered market by market to hit each summer at its peak, with pre-summer boosters priming demand.</p>
+      <p>Creative and growth teams worked from shared assets and shared metrics across the full channel stack, from upper-funnel video and organic social through paid, web, CRM, and in-app summer playlists, letting performance data from lower-funnel executions feed back into what the brand layer amplified.</p>
+      <p>This is the operating model behind the work: global brand strategy as the spine, local culture as the voice, and a measurement loop connecting the two.</p>
+    </section>
+
+    <div class="frame-trio">
+      <div class="frame"><img src="assets/summer/slide-04.jpg" alt="Top of funnel: the scroll-stopper"></div>
+      <div class="frame"><img src="assets/summer/slide-05.jpg" alt="Mid funnel: inside the studio"></div>
+      <div class="frame"><img src="assets/summer/slide-06.jpg" alt="Lower funnel: the offer"></div>
+    </div>
+
+    <div class="frame std">
+      <img src="assets/summer/slide-07.jpg" alt="One system across every market"></div>
+
+  </div>
+
+  <section class="bleed">
+    <img src="assets/summer/slide-08.jpg" alt="Summer on Podimo out in the world">
+  </section>
+
+  <section class="results-dark">
+    <div class="wrap">
+      <h2>Results</h2>
+      <p>The campaign is live across markets through summer 2026.</p>
+      <div class="stats">
+        <div class="stat-row">
+          <div class="stat-lockup"><b>–</b><i>Impressions*</i></div>
+          <span class="stat-note">*Across all live markets</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>–</b><i>Conversion*</i></div>
+          <span class="stat-note">*Lift vs. prior period</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>–</b><i>Markets*</i></div>
+          <span class="stat-note">*Running the global framework</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <div>
+        <span>Next Case · 02</span>
+        <a href="galaxys-edge-case-study.html"><h2>Galaxy's Edge</h2></a>
+      </div>
+      <a class="all" href="index.html#work">All Work</a>
+    </div>
+  </section>
+
+</body>
+</html>

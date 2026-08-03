@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podimo · Case Study · Nicolai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --cream-2:#F5F6F7;
+    --ink:#1D1D1F;
+    --ink-soft:#6E6E73;
+    --clay:#3D3BF3;
+    --hair: rgba(29,29,31,0.10);
+    --hair-strong: rgba(29,29,31,0.22);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:'Instrument Sans', sans-serif; -webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--clay); color:#fff;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
+  @media (max-width:760px){ .wrap{padding:0 22px;} }
+
+  .topbar-outer{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.88); backdrop-filter:saturate(160%) blur(14px); -webkit-backdrop-filter:saturate(160%) blur(14px); border-bottom:1px solid var(--hair);}
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .mark{
+    display:flex; align-items:center; justify-content:center;
+    width:34px; height:34px;
+    background:var(--ink); color:#fff;
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:600; font-size:13px; letter-spacing:0.02em;
+    transition:background .25s ease;
+  }
+  a.mark:hover{background:var(--clay);}
+  .back{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); transition:color .25s ease;}
+  .back:hover{color:var(--clay);}
+  @media (max-width:760px){
+    .topbar{padding:12px 0;}
+    .mark{width:30px; height:30px; font-size:12px;}
+  }
+
+  .case-hero{padding:90px 0 70px;}
+  .eyebrow{display:block; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--clay); margin-bottom:24px;}
+  h1{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 6.4vw, 84px); line-height:1.0; letter-spacing:-0.03em; max-width:960px;}
+  h1 em{font-style:normal; color:var(--clay);}
+  .dek{font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:560px; margin-top:28px;}
+
+  .meta{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:36px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); margin-bottom:64px;}
+  @media (max-width:760px){ .meta{grid-template-columns:1fr 1fr;} }
+  .meta div span{display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;}
+  .meta div b{font-weight:500; font-size:14px;}
+
+  .frame{background:var(--cream-2); border:1px solid var(--hair); overflow:hidden; margin-bottom:64px;}
+  .frame.wide{aspect-ratio:16/8;}
+  .frame.std{aspect-ratio:16/10;}
+  .frame img{width:100%; height:100%; object-fit:cover;}
+  .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
+  @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
+  .frame-pair .frame{margin-bottom:0;}
+
+  section.block{padding:0 0 72px;}
+  .block h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px; max-width:640px;}
+  .block p{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:18px;}
+  .block p b{color:var(--ink); font-weight:500;}
+
+  .touchpoints{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px;}
+  .touchpoint{font-size:12px; letter-spacing:0.04em; padding:8px 16px; border:1px solid var(--hair-strong); color:var(--ink-soft);}
+
+  .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
+  .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
+  @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
+  .stat-lockup b, .stat-lockup i{display:block; font-family:'Bricolage Grotesque', sans-serif; font-style:normal; font-weight:500; font-size:clamp(40px, 6vw, 76px); letter-spacing:-0.03em; line-height:1.04;}
+  .stat-lockup b{color:var(--clay);}
+  .stat-lockup i{color:var(--ink);}
+  .stat-note{font-size:14px; font-weight:500; color:var(--ink-soft); justify-self:end; max-width:280px; line-height:1.65;}
+  @media (max-width:760px){ .stat-note{justify-self:start;} }
+
+  section.bleed{margin:0 0 72px;}
+  section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
+  .frame-trio{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;}
+  @media (max-width:860px){ .frame-trio{grid-template-columns:1fr;} }
+  .frame-trio .frame{margin-bottom:0; aspect-ratio:4/5;}
+
+  section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
+  .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
+  .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
+  .results-dark .stats{border-top:1px solid rgba(255,255,255,0.16); margin-bottom:0;}
+  .results-dark .stat-row{border-bottom:1px solid rgba(255,255,255,0.16);}
+  .results-dark .stat-lockup i{color:#fff;}
+  .results-dark .stat-note{color:rgba(255,255,255,0.85);}
+
+  .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
+  .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .next span{display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7B79FF; margin-bottom:14px;}
+  .next a h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(30px, 4.6vw, 54px); letter-spacing:-0.025em; transition:opacity .25s ease;}
+  .next a:hover h2{opacity:0.8;}
+  .next .all{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:4px;}
+</style>
+</head>
+<body>
+
+  <header class="topbar-outer">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="mark" href="index.html">NG</a>
+        <a class="back" href="index.html#work">← All Work</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="case-hero">
+      <span class="eyebrow">Case 03 · Master Brand · Brand Systems · 2026</span>
+      <h1>Podimo. <em>From audio brand to entertainment brand.</em></h1>
+      <p class="dek">Podcasts grew up. They moved from audio into video, live events, and full-spectrum media, and the platforms winning the category now behave like entertainment houses. Podimo's master brand had to move with them: a complete overhaul, launching now, that replaces a visual direction with a full brand strategy and system.</p>
+    </header>
+
+    <div class="meta">
+      <div><span>Role</span><b>VP, Global Brand &amp; Creative · Owned A to Z</b></div>
+      <div><span>Year</span><b>2026</b></div>
+      <div><span>Lane</span><b>Brand Systems · Master brand</b></div>
+      <div><span>Status</span><b>Launching now</b></div>
+    </div>
+
+    <div class="frame wide">
+      <img src="assets/podimo/case-hero.jpg" alt="Podimo Brand 2026 hero">
+    </div>
+
+    <section class="block">
+      <h2>Why now: the category outgrew its brand</h2>
+      <p><b>Podimo is no longer an audio property, because podcasts aren't.</b> The category consolidated into a media business spanning podcast, audio, video, and live events, with the strongest players building entire show universes across platforms. To drive ambitious growth and M&amp;A across existing and new markets, the company needed brand clarity and brand flexibility, and an identity born as an audio app could deliver neither.</p>
+      <p>The old identity was a visual direction. The overhaul replaces it with the full stack: purpose, positioning, pillars, personality, tone of voice and visuals, and a dynamic design system, built to live in entertainment.</p>
+    </section>
+  </div>
+
+  <section class="bleed">
+    <img src="assets/podimo/slide-01.jpg" alt="Podimo Brand 2026, the new identity in full">
+  </section>
+
+  <div class="wrap">
+    <section class="block">
+      <h2>The platform</h2>
+      <p>The strategy centers on one purpose, enriching lives through listening, expressed as a single active idea: <b>we create the conversations that connect us.</b> Podimo builds communities through content, producing and promoting hyper-local, ultra-relevant shows enabled by technology that brings creators and audiences closer together.</p>
+      <p>Three pillars carry it: <b>Content</b> created and curated for every mood, <b>Culture</b> by driving the local conversation on its own terms, and <b>Community</b> designed for finding your people. The differentiation is equally sharp: creator-centric, hyper-local, and crafted and consolidated, the only European player owning the full value chain from production to monetisation. Or as the strategy puts it: what podcasts want to be when they grow up.</p>
+    </section>
+
+    <div class="frame-pair">
+      <div class="frame std"><img src="assets/podimo/slide-02.jpg" alt="Podimo brand platform"></div>
+      <div class="frame std"><img src="assets/podimo/slide-03.jpg" alt="Content, Culture, Community pillars"></div>
+    </div>
+
+    <section class="block">
+      <h2>A personality that moves</h2>
+      <p>The brand personality is built on a simple stance: Podimo sets the conversation in motion. The system expresses it through a dynamic design language, bold typography, an electric palette, and a photographic tone that feels like being inside the moment rather than observing it, flexible enough for every market, every vertical, and every format the media house now spans.</p>
+    </section>
+
+    <div class="frame-trio">
+      <div class="frame"><img src="assets/podimo/slide-04.jpg" alt="Podimo typography"></div>
+      <div class="frame"><img src="assets/podimo/slide-05.jpg" alt="Podimo colour palette"></div>
+      <div class="frame"><img src="assets/podimo/slide-06.jpg" alt="Podimo photographic tone"></div>
+    </div>
+
+    <div class="frame std">
+      <img src="assets/podimo/slide-07.jpg" alt="Podimo dynamic design system in application">
+    </div>
+
+    <section class="block">
+      <h2>The system everything else hangs off</h2>
+      <p>This master brand is the root of the Brand Systems lane: <a href="podimo-studios-case-study.html" style="border-bottom:1px solid var(--hair-strong);">Podimo Studios</a> speaks to creators from it, <a href="sports-vertical-case-study.html" style="border-bottom:1px solid var(--hair-strong);">Sports on Podimo</a> builds a vertical super-brand inside it, and every campaign from tentpoles to key moments executes through its design system. The arc that led here ran through Listen Better in 2024, which made listening the brand's cultural territory, and Reflect, which made the relationship personal, before the mandate formalised the lanes and the overhaul rebuilt the foundation they stand on.</p>
+    </section>
+  </div>
+
+  <section class="bleed">
+    <img src="assets/podimo/slide-08.jpg" alt="The Podimo brand across surfaces and markets">
+  </section>
+
+  <section class="results-dark">
+    <div class="wrap">
+      <h2>The shift</h2>
+      <p>What the overhaul changes, launching across markets now:</p>
+      <div class="stats">
+        <div class="stat-row">
+          <div class="stat-lockup"><b>From audio</b><i>To entertainment*</i></div>
+          <span class="stat-note">*Podcast, audio, video, and live events under one brand built for the media era</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>From a look</b><i>To a system*</i></div>
+          <span class="stat-note">*Purpose, positioning, pillars, personality, voice, and a dynamic design system replacing a visual direction</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>One brand</b><i>Every surface*</i></div>
+          <span class="stat-note">*Master brand, sub-brands, and verticals flexing across six markets without losing themselves</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <div>
+        <span>Next Case · 04</span>
+        <a href="sports-vertical-case-study.html"><h2>Sports on Podimo</h2></a>
+      </div>
+      <a class="all" href="index.html#work">All Work</a>
+    </div>
+  </section>
+
+</body>
+</html>
