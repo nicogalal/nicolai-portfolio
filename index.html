@@ -242,6 +242,33 @@
   }
   .about-bio p b{color:var(--ink); font-weight:500;}
 
+  .about-quotes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    margin-top:56px;
+  }
+  @media (max-width:900px){ .about-quotes{grid-template-columns:1fr; gap:40px;} }
+  .about-quotes figure{
+    margin:0;
+    padding-left:24px;
+    border-left:2px solid var(--clay);
+  }
+  .about-quotes blockquote{margin:0;}
+  .about-quotes blockquote p{
+    font-family:'Instrument Sans', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0 0 16px;
+  }
+  .about-quotes figcaption{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
   .resume{margin-top:56px;}
   .resume-block{
     padding:28px 0;
@@ -506,6 +533,21 @@
           <p>Former Walt Disney Company creative leader, where he directed the creative vision for the $2B Star Wars: Galaxy's Edge launch and personally authored its global style guide. Across entertainment, fintech, and consumer brands, he builds small, autonomous teams that ship fast and own outcomes.</p>
           <p><b>He leads through people and systems in equal measure.</b> The people part: hiring strong, complementary talent, trusting their skills, and leading with high EQ and a bias for finding the solution rather than the problem. The systems part: giving creativity an engine, like the test-and-learn loop he built between creative and growth, where proven formats are iterated on signal (hook, hold, conversion), two to three new creative bets are tested head-to-head each month, and every asset ends in one of four decisions: optimise, scale, re-test, or kill. Each cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
         </div>
+      </div>
+
+      <div class="about-quotes">
+        <figure>
+          <blockquote>
+            <p>"A very rare combination of high creativity, structured thought, seamless organisation and commercial focus. Capable of inspiring a team to produce best-in-class conceptual campaigns on one hand, and to operate iterative test-and-learn processes that take full-funnel performance to the next level on the other."</p>
+          </blockquote>
+          <figcaption>Iain Sawbridge · Chief Commercial Officer, Podimo</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            <p>"One of the most talented creative leaders I've worked with. His pragmatic approach ensures that great ideas become reality without ever compromising on quality."</p>
+          </blockquote>
+          <figcaption>Fride [SURNAME] · Commercial VP Nordics, Podimo</figcaption>
+        </figure>
       </div>
 
       <div class="resume" id="resume">
