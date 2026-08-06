@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicolai · Brand &amp; Creative</title>
+<title>Nicolai Galal · Brand &amp; Creative</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
@@ -65,7 +65,7 @@
   }
 
   /* HERO / INTRO */
-  .hero{padding:100px 0 90px; border-bottom:1px solid var(--hair);}
+  .hero{padding:100px 0 90px;}
   @keyframes rise{
     from{opacity:0; transform:translateY(22px);}
     to{opacity:1; transform:translateY(0);}
@@ -124,7 +124,7 @@
   .btn.ghost:hover{border-color:var(--ink); }
 
   /* SELECTED WORK */
-  section.work{padding:96px 0; border-bottom:1px solid var(--hair);}
+  section.work{padding:96px 0;}
   .section-head{
     display:flex;
     justify-content:space-between;
@@ -183,29 +183,6 @@
   .work-card:hover .frame img{transform:scale(1.035);}
   .work-card h3{transition:color .25s ease;}
   .work-card:hover h3{color:var(--clay);}
-
-  /* MANDATE, full-bleed dark band */
-  section.mandate{background:#0B0B0C; color:#fff; padding:96px 0;}
-  section.mandate .section-head span{color:rgba(255,255,255,0.6);}
-  .mandate-intro{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:52px;}
-  .mandate-intro b{color:#fff; font-weight:500;}
-  .lanes{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
-  @media (max-width:860px){ .lanes{grid-template-columns:1fr;} }
-
-  /* Campaign results metrics band (numeric lockups, dark, homepage rhythm) */
-  section.results-metrics{background:#0B0B0C; color:#fff; padding:96px 0;}
-  .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
-  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
-  @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
-  @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
-  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
-  .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
-  .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
-  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
-  .results-metrics .stat-footnotes p{margin:0 0 4px;}
-  .lane{border-top:2px solid var(--clay); padding-top:22px;}
-  .lane h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:19px; letter-spacing:-0.01em; margin-bottom:10px; color:#fff;}
-  .lane p{font-size:14px; line-height:1.7; color:rgba(255,255,255,0.7);}
   .work-meta{
     display:flex;
     justify-content:space-between;
@@ -230,6 +207,71 @@
     color:var(--ink-soft);
   }
 
+  /* PULL QUOTES · editorial, one voice at a time */
+  section.pullquote{padding:96px 0; border-top:1px solid var(--hair);}
+  .pullquote .pq-mark{width:14px; height:14px; background:var(--clay); margin-bottom:40px;}
+  .pullquote blockquote{margin:0;}
+  .pullquote blockquote p{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:500;
+    font-size:clamp(25px, 3.4vw, 42px);
+    line-height:1.24;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    max-width:980px;
+  }
+  .pullquote figcaption{
+    margin-top:40px;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .pullquote figcaption b{color:var(--ink); font-weight:600;}
+  section.pullquote.dark{
+    background:#0B0B0C;
+    border-top:1px solid rgba(255,255,255,0.16);
+  }
+  .pullquote.dark .pq-mark{background:#7B79FF;}
+  .pullquote.dark blockquote p{color:#fff;}
+  .pullquote.dark figcaption{color:rgba(255,255,255,0.6);}
+  .pullquote.dark figcaption b{color:#fff;}
+
+  /* MANDATE, full-bleed dark band */
+  section.mandate{background:#0B0B0C; color:#fff; padding:96px 0;}
+  section.mandate .section-head span{color:rgba(255,255,255,0.6);}
+  .mandate-intro{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:52px;}
+  .mandate-intro b{color:#fff; font-weight:500;}
+  .lanes{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  @media (max-width:860px){ .lanes{grid-template-columns:1fr;} }
+  .lane{border-top:2px solid var(--clay); padding-top:22px;}
+  .lane h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:19px; letter-spacing:-0.01em; margin-bottom:10px; color:#fff;}
+  .lane p{font-size:14px; line-height:1.7; color:rgba(255,255,255,0.7);}
+
+  /* THE MACHINE · light band, lockups instead of prose */
+  section.machine{padding:96px 0; border-bottom:1px solid var(--hair);}
+  .machine-intro{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:56px;}
+  .machine-intro b{color:var(--ink); font-weight:500;}
+  .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  @media (max-width:900px){ .machine .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
+  @media (max-width:560px){ .machine .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .machine .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:var(--clay);}
+  .machine .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:var(--ink-soft); max-width:26ch;}
+  .machine .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid var(--hair); font-size:13px; line-height:1.7; color:var(--ink-soft);}
+  .machine .stat-footnotes p{margin:0 0 4px;}
+
+  /* Campaign results metrics band (numeric lockups, dark, homepage rhythm) */
+  section.results-metrics{background:#0B0B0C; color:#fff; padding:96px 0;}
+  .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
+  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
+  @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
+  .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
+  .results-metrics .stat-footnotes p{margin:0 0 4px;}
+
   /* ABOUT */
   section.about{padding:96px 0; border-bottom:1px solid var(--hair);}
   .about-grid{
@@ -243,6 +285,12 @@
     aspect-ratio:4/5;
     background:var(--cream-2);
     border:1px solid var(--hair);
+    overflow:hidden;
+  }
+  .about-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:56% 50%;
   }
 
   .about-bio p{
@@ -253,33 +301,6 @@
     margin-bottom:20px;
   }
   .about-bio p b{color:var(--ink); font-weight:500;}
-
-  .about-quotes{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:56px;
-    margin-top:56px;
-  }
-  @media (max-width:900px){ .about-quotes{grid-template-columns:1fr; gap:40px;} }
-  .about-quotes figure{
-    margin:0;
-    padding-left:24px;
-    border-left:2px solid var(--clay);
-  }
-  .about-quotes blockquote{margin:0;}
-  .about-quotes blockquote p{
-    font-family:'Instrument Sans', sans-serif;
-    font-size:16px;
-    line-height:1.7;
-    color:var(--ink);
-    margin:0 0 16px;
-  }
-  .about-quotes figcaption{
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-  }
 
   .resume{margin-top:56px;}
   .resume-block{
@@ -405,19 +426,29 @@
 
   <div class="wrap">
     <header class="hero" id="top">
-      <span class="eyebrow">Portfolio · 2026</span>
-      <h1>Nicolai builds <em>brand systems</em> that perform like products.</h1>
-      <p class="dek">VP, Global Brand &amp; Creative at Podimo. Former Walt Disney Company creative leader. Building brand platforms, full-funnel campaign systems, and AI-accelerated creative studios for entertainment and creator platforms, from Copenhagen across global markets.</p>
+      <span class="eyebrow">Nicolai Galal · Brand &amp; Creative</span>
+      <h1>I build brands people <em>talk about</em>.</h1>
+      <p class="dek">VP of Global Brand &amp; Creative at Podimo, before that Disney. Along the way: co-founder of two startups and a creative studio. I make brands that belong in culture: campaigns that spark conversations, communities that keep them going, and the numbers to prove it worked. Copenhagen, working across EMEA and the US.</p>
       <div class="hero-cta">
         <a class="btn primary" data-target="work">View Work</a>
         <a class="btn ghost" data-target="resume">Resume</a>
       </div>
     </header>
 
+    <section class="pullquote">
+      <div class="pq-mark"></div>
+      <figure>
+        <blockquote>
+          <p>"Nicolai is one of the most talented creative leaders I've worked with. He has an exceptional ability to combine strategic thinking, creativity, and execution, while leading teams with trust, clarity, and ambition."</p>
+        </blockquote>
+        <figcaption><b>Fride von Porat</b> · VP, Commercial Nordics, Podimo</figcaption>
+      </figure>
+    </section>
+
     <section class="work" id="work">
       <div class="section-head">
         <h2>Selected Work</h2>
-        <span>07 Cases</span>
+        <span>08 Cases</span>
       </div>
       <div class="work-grid three">
         <a class="work-card" href="summer-campaign-case-study.html">
@@ -480,20 +511,8 @@
           <div class="work-tags">Sub-brand identity · CC shortlist</div>
         </a>
 
-        <a class="work-card" href="dag-en-nacht-case-study.html">
-          <span class="idx">06</span>
-          <div class="frame">
-            <img src="assets/dagennacht/case-hero.jpg" alt="Dag en Nacht brandbook cover">
-          </div>
-          <div class="work-meta">
-            <h3>Dag en Nacht</h3>
-            <span>2026</span>
-          </div>
-          <div class="work-tags">Acquisition rebrand · NL</div>
-        </a>
-
         <a class="work-card" href="undergrunden-case-study.html">
-          <span class="idx">07</span>
+          <span class="idx">06</span>
           <div class="frame">
             <img src="assets/undergrunden/slide-12.jpg" alt="Undergrunden · Den Danske Fightclub">
           </div>
@@ -503,7 +522,41 @@
           </div>
           <div class="work-tags">Show 360 · The tentpole precursor</div>
         </a>
+
+        <a class="work-card" href="duellen-case-study.html">
+          <span class="idx">07</span>
+          <div class="frame">
+            <img src="assets/duellen/case-hero.jpg" alt="Duellen launch campaign hero">
+          </div>
+          <div class="work-meta">
+            <h3>Duellen</h3>
+            <span>2026</span>
+          </div>
+          <div class="work-tags">Tentpole · Talent-led show launch</div>
+        </a>
+
+        <a class="work-card" href="dag-en-nacht-case-study.html">
+          <span class="idx">08</span>
+          <div class="frame">
+            <img src="assets/dagennacht/case-hero.jpg" alt="Dag en Nacht brandbook cover">
+          </div>
+          <div class="work-meta">
+            <h3>Dag en Nacht</h3>
+            <span>2026</span>
+          </div>
+          <div class="work-tags">Acquisition rebrand · NL</div>
+        </a>
       </div>
+    </section>
+
+    <section class="pullquote">
+      <div class="pq-mark"></div>
+      <figure>
+        <blockquote>
+          <p>"His superpower is in converting personalities, businesses and tech propositions into compelling, coherent and creative brands. He understands that brand goes far beyond how a company looks or what happens in its advertising, and knows how to develop brand and drive brand-led strategies through every part of a company's present and future commercial form."</p>
+        </blockquote>
+        <figcaption><b>Iain Sawbridge</b> · Chief Commercial Officer, Podimo</figcaption>
+      </figure>
     </section>
 
   </div>
@@ -514,7 +567,7 @@
         <h2>Creativity that <em style="font-style:normal; color:var(--clay);">performs</em></h2>
         <span>The Mandate</span>
       </div>
-      <p class="mandate-intro"><b>At Podimo, Nicolai defined Brand &amp; Creative's mandate across three lanes,</b> delivered by a global team with local creatives in six markets. Underneath it sits a campaign portfolio model that treats shows like brands: tentpoles that build super-brands, acquirers that convert, engagers that retain, and key cultural moments that join the conversation.</p>
+      <p class="mandate-intro"><b>My mandate at Podimo runs across three lanes,</b> delivered by a global team with local creatives in six markets. Underneath it sits a campaign portfolio that treats shows like brands: tentpoles that build super-brands, acquirers that convert, engagers that retain, and key cultural moments that join the conversation.</p>
       <div class="lanes">
         <div class="lane">
           <h3>Brand Systems</h3>
@@ -532,9 +585,40 @@
     </div>
   </section>
 
+  <div class="wrap">
+    <section class="machine">
+      <div class="section-head">
+        <h2>The <em style="font-style:normal; color:var(--clay);">engine</em> behind it</h2>
+        <span>Creative and Growth, one loop</span>
+      </div>
+      <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill.</p>
+      <div class="stat-grid">
+        <div class="lockup">
+          <span class="value">650%</span>
+          <span class="label">Creative output scaled through an AI-accelerated production pipeline</span>
+        </div>
+        <div class="lockup">
+          <span class="value">75%</span>
+          <span class="label">Post-production time cut across the studio</span>
+        </div>
+        <div class="lockup">
+          <span class="value">2–3</span>
+          <span class="label">New creative bets tested head-to-head, every month</span>
+        </div>
+        <div class="lockup">
+          <span class="value">+50%</span>
+          <span class="label">Conversion lift from cross-market creative testing, inside 90 days</span>
+        </div>
+      </div>
+      <div class="stat-footnotes">
+        <p>Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
+      </div>
+    </section>
+  </div>
+
   <section class="results-metrics">
     <div class="wrap">
-      <h2 class="band-kicker">Always-on · Jan–Aug 2026 · five markets</h2>
+      <h2 class="band-kicker">The engine, shipping · Always-on · Jan–Aug 2026 · five markets</h2>
       <div class="stat-grid">
         <div class="lockup">
           <span class="value">19.2M</span>
@@ -559,6 +643,18 @@
     </div>
   </section>
 
+  <section class="pullquote dark">
+    <div class="wrap">
+      <div class="pq-mark"></div>
+      <figure>
+        <blockquote>
+          <p>"First and foremost, Nicolai is a brilliant human, insanely good (and fun) to work with, and a really brilliant manager to boot."</p>
+        </blockquote>
+        <figcaption><b>Iain Sawbridge</b> · Chief Commercial Officer, Podimo</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <div class="wrap">
     <section class="about" id="about">
       <div class="section-head">
@@ -566,27 +662,11 @@
         <span>Bio</span>
       </div>
       <div class="about-grid">
-        <div class="about-photo"></div>
+        <div class="about-photo"><img src="assets/nicolai.jpg" alt="Nicolai Galal"></div>
         <div class="about-bio">
-          <p><b>Nicolai is a global creative executive who treats creative as a product discipline</b>: built, measured, and iterated against real commercial outcomes rather than shipped and forgotten. As VP, Global Brand &amp; Creative at Podimo, he built a cross-market creative platform and launch framework that lifted conversion metrics up to 50% while scaling creative output 650% through AI-driven production.</p>
-          <p>Former Walt Disney Company creative leader, where he directed the creative vision for the $2B Star Wars: Galaxy's Edge launch and personally authored its global style guide. Across entertainment, fintech, and consumer brands, he builds small, autonomous teams that ship fast and own outcomes.</p>
-          <p><b>He leads through people and systems in equal measure.</b> The people part: hiring strong, complementary talent, trusting their skills, and leading with high EQ and a bias for finding the solution rather than the problem. The systems part: giving creativity an engine, like the test-and-learn loop he built between creative and growth, where proven formats are iterated on signal (hook, hold, conversion), two to three new creative bets are tested head-to-head each month, and every asset ends in one of four decisions: optimise, scale, re-test, or kill. Each cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
+          <p><b>I fall in love with ideas, then hold them accountable.</b> Everything we make is built, measured, and iterated against real outcomes, never shipped and forgotten. At Podimo I've taken Brand &amp; Creative from a production unit to a 27-person global team across six markets, repositioned the platform from podcast app to entertainment house, and built the campaign portfolio that turns show launches into a repeatable, culturally local system.</p>
+          <p><b>Before that I directed the creative vision for Star Wars: Galaxy's Edge</b> at The Walt Disney Company, a $2B world across two parks, and personally authored the global style guide that governed it. I lead through people and systems in equal measure: hire strong, complementary talent, trust their skills, and give creativity an engine so the best ideas ship fast and keep shipping.</p>
         </div>
-      </div>
-
-      <div class="about-quotes">
-        <figure>
-          <blockquote>
-            <p>"A very rare combination of high creativity, structured thought, seamless organisation and commercial focus. Capable of inspiring a team to produce best-in-class conceptual campaigns on one hand, and to operate iterative test-and-learn processes that take full-funnel performance to the next level on the other."</p>
-          </blockquote>
-          <figcaption>Iain Sawbridge · Chief Commercial Officer, Podimo</figcaption>
-        </figure>
-        <figure>
-          <blockquote>
-            <p>"One of the most talented creative leaders I've worked with. His pragmatic approach ensures that great ideas become reality without ever compromising on quality."</p>
-          </blockquote>
-          <figcaption>Fride von Porat · VP, Commercial Nordics, Podimo</figcaption>
-        </figure>
       </div>
 
       <div class="resume" id="resume">
@@ -620,7 +700,7 @@
           <div class="resume-year">2017–2018</div>
           <div class="resume-role">
             <h4>Founder &amp; Creative Director · Something New Studio</h4>
-            <p>Founded a creative studio serving Disney, Pandora, Unity, and Coca-Cola. Client work led Disney to recruit him in-house within 6 months to direct global brand design.</p>
+            <p>Founded a creative studio serving Disney, Pandora, Unity, and Coca-Cola. Client work led Disney to recruit me in-house within 6 months to direct global brand design.</p>
           </div>
         </div>
         <div class="resume-block">
@@ -656,6 +736,7 @@
           <div class="skill">Global Creative Leadership</div>
           <div class="skill">Brand Vision &amp; Campaign Strategy</div>
           <div class="skill">Full-Funnel Campaign Systems</div>
+          <div class="skill">Social-Native Content Systems</div>
           <div class="skill">Show Launch &amp; Cultural Moments</div>
           <div class="skill">Visual Identity Systems</div>
           <div class="skill">AI &amp; Design Innovation</div>
@@ -671,8 +752,8 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="contact-grid">
-        <h2><b>Open</b> to VP-level brand and creative leadership.*</h2>
-        <span class="contact-note">*Based in Copenhagen, working across EMEA and the US.</span>
+        <h2><b>Open</b> to the next big build.*</h2>
+        <span class="contact-note">*VP-level brand and creative leadership. Based in Copenhagen, working across EMEA and the US.</span>
       </div>
       <div class="contact-links">
         <a href="mailto:nicolai.galal@gmail.com">Email</a>
@@ -681,7 +762,7 @@
       </div>
       <footer>
         <span>Brand &amp; Creative Portfolio</span>
-        <span>Nicolai · Copenhagen · 2026</span>
+        <span>Nicolai Galal · Copenhagen · 2026</span>
       </footer>
     </div>
   </section>

@@ -7,9 +7,3 @@ node_modules/
 
 # Claude Code local settings
 .claude/settings.local.json
-
-# EMBARGO: Duellen show name is revealed publicly ~Aug 27 2026.
-# These are excluded from the deploy until reveal. Remove both lines,
-# re-add the homepage card as 07, and bump Undergrunden back to 08 at reveal.
-duellen-case-study.html
-assets/duellen/
