@@ -94,6 +94,18 @@
   .results-dark .stat-lockup i{color:#fff;}
   .results-dark .stat-note{color:rgba(255,255,255,0.85);}
 
+  /* Campaign results metrics bands (numeric lockups, dark) */
+  section.results-metrics{background:#0B0B0C; color:#fff; padding:80px 0;}
+  .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
+  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
+  @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
+  .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
+  .results-metrics .stat-footnotes p{margin:0 0 4px;}
+
   .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
   .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
   .next span{display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7B79FF; margin-bottom:14px;}
@@ -180,23 +192,31 @@
     </section>
   </div>
 
-  <section class="results-dark">
+  <section class="results-metrics">
     <div class="wrap">
-      <h2>The proof</h2>
-      <p>What one show launch demonstrated:</p>
-      <div class="stats">
-        <div class="stat-row">
-          <div class="stat-lockup"><b>First</b><i>R-rated audio trailer*</i></div>
-          <span class="stat-note">*The content's intensity turned into the campaign's hook, not its liability</span>
+      <h2 class="band-kicker">Results · Undergrunden · Oct–Nov 2025</h2>
+      <div class="stat-grid">
+        <div class="lockup">
+          <span class="value">7.71%</span>
+          <span class="label">CTR across 5.5M impressions</span>
         </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>DR to IMDb</b><i>Earned everywhere*</i></div>
-          <span class="stat-note">*National broadcaster culture coverage, trade press, international pickup, and an IMDb listing from one launch</span>
+        <div class="lockup">
+          <span class="value">2x<sup>*</sup></span>
+          <span class="label">CTR when the Eksperimentet cuts went live</span>
         </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>Show 360</b><i>Became Tentpoles*</i></div>
-          <span class="stat-note">*The launch model proven here was productized into the campaign portfolio's biggest play</span>
+        <div class="lockup">
+          <span class="value">1.15M<sup>**</sup></span>
+          <span class="label">Danes reached</span>
         </div>
+        <div class="lockup">
+          <span class="value">13.0%<sup>***</sup></span>
+          <span class="label">Top creative CTR</span>
+        </div>
+      </div>
+      <div class="stat-footnotes">
+        <p>* 4.4% → 8.8% in week two · same media plan, new creative</p>
+        <p>** Roughly 1 in 5 of the Danish population, in five active weeks</p>
+        <p>*** Experiment format held the top three slots, all above 12%</p>
       </div>
     </div>
   </section>

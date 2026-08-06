@@ -191,6 +191,18 @@
   .mandate-intro b{color:#fff; font-weight:500;}
   .lanes{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
   @media (max-width:860px){ .lanes{grid-template-columns:1fr;} }
+
+  /* Campaign results metrics band (numeric lockups, dark, homepage rhythm) */
+  section.results-metrics{background:#0B0B0C; color:#fff; padding:96px 0;}
+  .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
+  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
+  @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
+  .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
+  .results-metrics .stat-footnotes p{margin:0 0 4px;}
   .lane{border-top:2px solid var(--clay); padding-top:22px;}
   .lane h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:19px; letter-spacing:-0.01em; margin-bottom:10px; color:#fff;}
   .lane p{font-size:14px; line-height:1.7; color:rgba(255,255,255,0.7);}
@@ -516,6 +528,33 @@
           <h3>Always-On Marketing</h3>
           <p>A continuous creative engine feeding acquisition, engagement, and retention, iterated fast against live performance data.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results-metrics">
+    <div class="wrap">
+      <h2 class="band-kicker">Always-on · Jan–Aug 2026 · five markets</h2>
+      <div class="stat-grid">
+        <div class="lockup">
+          <span class="value">19.2M</span>
+          <span class="label">Always-on impressions</span>
+        </div>
+        <div class="lockup">
+          <span class="value">38.9%<sup>*</sup></span>
+          <span class="label">Hook rate</span>
+        </div>
+        <div class="lockup">
+          <span class="value">€0.19</span>
+          <span class="label">Per landing page view, the campaigns' core KPI</span>
+        </div>
+        <div class="lockup">
+          <span class="value">+62%</span>
+          <span class="label">Social interaction, Summer26 vs VoiceNotes</span>
+        </div>
+      </div>
+      <div class="stat-footnotes">
+        <p>* Internal success bar: 30% · best asset 53.4% hook and 7.44% CTR</p>
       </div>
     </div>
   </section>
