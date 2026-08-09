@@ -59,8 +59,8 @@
   .frame.wide{aspect-ratio:16/8;}
   .frame.std{aspect-ratio:16/10;}
   .frame img,.frame video{width:100%; height:100%; object-fit:cover; display:block;}
-  .frame.video-embed{position:relative; aspect-ratio:16/9;}
-  .frame.video-embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0;}
+  .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
+  .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .frame-phone{width:280px; margin:0 auto 64px; border:1px solid var(--hair); border-radius:24px; overflow:hidden; background:var(--cream-2);}
   .frame-phone img{width:100%; height:auto; display:block;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
@@ -142,8 +142,8 @@
       <div><span>Channels</span><b>Video, social, paid, web, CRM, in-app</b></div>
     </div>
 
-    <div class="frame wide video-embed">
-      <iframe src="https://player.vimeo.com/video/1216782798?h=989a3b3df6&autoplay=1&muted=1&loop=1&controls=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Summer on Podimo campaign hero film"></iframe>
+    <div class="video-embed">
+      <iframe src="https://player.vimeo.com/video/1216782798?h=989a3b3df6&controls=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Summer on Podimo campaign hero film"></iframe>
     </div>
 
     <section class="block">
@@ -189,7 +189,7 @@
     </section>
 
     <div class="frame-pair">
-      <div class="frame std video-embed"><iframe src="https://player.vimeo.com/video/1216782930?h=658b49c7c9&autoplay=1&muted=1&loop=1&controls=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Local market film, telling a friend"></iframe></div>
+      <div class="video-embed"><iframe src="https://player.vimeo.com/video/1216782930?h=658b49c7c9&controls=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Local market film, telling a friend"></iframe></div>
       <div class="frame std"><img src="assets/summer/slide-03.jpg" alt="Local market film, second market"></div>
     </div>
 
