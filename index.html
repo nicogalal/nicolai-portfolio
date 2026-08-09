@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicolai Galal · Brand &amp; Creative</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Instrument+Sans:ital,wght@0,400..600;1,400..600&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#FFFFFF;
@@ -470,7 +469,7 @@
         <a class="work-card" href="summer-campaign-case-study.html">
           <span class="idx">01</span>
           <div class="frame">
-            <img src="assets/summer/case-hero.jpg" alt="Podimo Summer Campaign 2026 hero">
+            <img src="assets/summer/case-hero.gif" alt="Podimo Summer Campaign 2026 hero">
           </div>
           <div class="work-meta">
             <h3>Summer on Podimo</h3>
@@ -482,7 +481,7 @@
         <a class="work-card" href="galaxys-edge-case-study.html">
           <span class="idx">02</span>
           <div class="frame">
-            <img src="assets/galaxysedge/galatic-copy.jpg" alt="Star Wars Galactic Starcruiser entrance">
+            <img src="assets/galaxysedge/galatic-copy.gif" alt="Star Wars Galactic Starcruiser entrance">
           </div>
           <div class="work-meta">
             <h3>Galaxy's Edge</h3>
@@ -494,7 +493,7 @@
         <a class="work-card" href="podimo-case-study.html">
           <span class="idx">03</span>
           <div class="frame">
-            <img src="assets/podimo/case-hero.jpg" alt="Podimo brand cover">
+            <img src="assets/podimo/case-hero.gif" alt="Podimo brand cover">
           </div>
           <div class="work-meta">
             <h3>Podimo</h3>
@@ -506,7 +505,7 @@
         <a class="work-card" href="sports-vertical-case-study.html">
           <span class="idx">04</span>
           <div class="frame">
-            <img src="assets/sports/case-hero.jpg" alt="Podimo Sports Vertical hero">
+            <img src="assets/sports/case-hero.gif" alt="Podimo Sports Vertical hero">
           </div>
           <div class="work-meta">
             <h3>Sports on Podimo</h3>
@@ -518,7 +517,7 @@
         <a class="work-card" href="podimo-studios-case-study.html">
           <span class="idx">05</span>
           <div class="frame">
-            <img src="assets/podimostudios_case-hero.jpg" alt="Podimo Studios hero">
+            <img src="assets/podimostudios_case-hero.gif" alt="Podimo Studios hero">
           </div>
           <div class="work-meta">
             <h3>Podimo Studios</h3>
@@ -530,7 +529,7 @@
         <a class="work-card" href="undergrunden-case-study.html">
           <span class="idx">06</span>
           <div class="frame">
-            <img src="assets/undergrunden/slide-12.jpg" alt="Undergrunden · Den Danske Fightclub">
+            <img src="assets/undergrunden/slide-12.png" alt="Undergrunden · Den Danske Fightclub">
           </div>
           <div class="work-meta">
             <h3>Undergrunden</h3>
@@ -542,7 +541,7 @@
         <a class="work-card" href="duellen-case-study.html">
           <span class="idx">07</span>
           <div class="frame">
-            <img src="assets/duellen/case-hero.jpg" alt="Duellen launch campaign hero">
+            <img src="assets/duellen/case-hero.gif" alt="Duellen launch campaign hero">
           </div>
           <div class="work-meta">
             <h3>Duellen</h3>
@@ -794,27 +793,8 @@
     </div>
   </section>
 
-<script>
-  const items = document.querySelectorAll('.topnav li, [data-target]');
-  items.forEach(el => {
-    el.addEventListener('click', () => {
-      const id = el.dataset.target;
-      const target = document.getElementById(id);
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
 
-  const navItems = document.querySelectorAll('.topnav li');
-  const sections = Array.from(navItems).map(li => document.getElementById(li.dataset.target)).filter(Boolean);
-  function onScroll(){
-    let current = sections[0];
-    const y = window.scrollY + 140;
-    sections.forEach(sec => { if(sec.offsetTop <= y) current = sec; });
-    navItems.forEach(li => li.classList.toggle('active', li.dataset.target === current.id));
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-</script>
 
-</body>
-</html>
+
+
+</body></html>
