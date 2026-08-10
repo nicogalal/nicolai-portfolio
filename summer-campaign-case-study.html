@@ -100,6 +100,36 @@
   .case-quote figcaption{margin-top:22px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft);}
   .case-quote figcaption b{color:var(--ink); font-weight:600;}
 
+  /* PULL QUOTES · editorial, one voice at a time */
+  section.pullquote{padding:96px 0; border-top:1px solid var(--hair);}
+  .pullquote .pq-mark{width:14px; height:14px; background:var(--clay); margin-bottom:40px;}
+  .pullquote blockquote{margin:0;}
+  .pullquote blockquote p{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:500;
+    font-size:clamp(25px, 3.4vw, 42px);
+    line-height:1.24;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    max-width:980px;
+  }
+  .pullquote figcaption{
+    margin-top:40px;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .pullquote figcaption b{color:var(--ink); font-weight:600;}
+  section.pullquote.dark{
+    background:#0B0B0C;
+    border-top:1px solid rgba(255,255,255,0.16);
+  }
+  .pullquote.dark .pq-mark{background:#7B79FF;}
+  .pullquote.dark blockquote p{color:#fff;}
+  .pullquote.dark figcaption{color:rgba(255,255,255,0.6);}
+  .pullquote.dark figcaption b{color:#fff;}
+
   section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
   .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
   .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
@@ -199,13 +229,6 @@
       <p>This is the operating model behind the work: global brand strategy as the spine, local culture as the voice, and a measurement loop connecting the two.</p>
     </section>
 
-    <figure class="case-quote">
-      <blockquote>
-        <p>"A strong leader with a very clear vision on the weight and the value of a brand within a growth ecosystem. His speed of execution has been crucial in fast-paced environments with tight deadlines, consistently delivering top-tier creative while staying nimble to shifting priorities."</p>
-      </blockquote>
-      <figcaption><b>Juan De Riso</b> · VP of Growth, Podimo</figcaption>
-    </figure>
-
     <div class="frame-trio">
       <div class="frame"><img src="assets/summer/slide-04.png" alt="Top of funnel: the scroll-stopper"></div>
       <div class="frame"><img src="assets/summer/slide-05.png" alt="Mid funnel: inside the studio"></div>
@@ -240,6 +263,18 @@
           <div class="stat-lockup"><b>37%</b><i>Spain's share of impressions by peak week</i></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="pullquote dark">
+    <div class="wrap">
+      <div class="pq-mark"></div>
+      <figure>
+        <blockquote>
+          <p>"A strong leader with a very clear vision on the weight and the value of a brand within a growth ecosystem. His speed of execution has been crucial in fast-paced environments with tight deadlines, consistently delivering top-tier creative while staying nimble to shifting priorities."</p>
+        </blockquote>
+        <figcaption><b>Juan De Riso</b> · VP of Growth, Podimo</figcaption>
+      </figure>
     </div>
   </section>
 
