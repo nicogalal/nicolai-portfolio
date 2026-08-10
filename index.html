@@ -797,4 +797,25 @@
 
 
 
+<script>
+  const items = document.querySelectorAll('.topnav li, [data-target]');
+  items.forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.target;
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  const navItems = document.querySelectorAll('.topnav li');
+  const sections = Array.from(navItems).map(li => document.getElementById(li.dataset.target)).filter(Boolean);
+  function onScroll(){
+    let current = sections[0];
+    const y = window.scrollY + 140;
+    sections.forEach(sec => { if(sec.offsetTop <= y) current = sec; });
+    navItems.forEach(li => li.classList.toggle('active', li.dataset.target === current.id));
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+</script>
 </body></html>
