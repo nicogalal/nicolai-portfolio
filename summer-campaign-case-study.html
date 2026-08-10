@@ -71,6 +71,10 @@
   .block p{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:18px;}
   .block p b{color:var(--ink); font-weight:500;}
 
+  /* Breathing room for headings that butt against a video embed or a dark band */
+  .video-embed + section.block{margin-top:64px;}
+  section.pullquote.dark + .wrap > section.block:first-child{margin-top:64px;}
+
   .funnel{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:44px;}
   @media (max-width:860px){ .funnel{grid-template-columns:1fr;} }
   .funnel-step{border-top:2px solid var(--clay); padding-top:22px;}
