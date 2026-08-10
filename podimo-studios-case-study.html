@@ -58,6 +58,8 @@
   .frame.wide{aspect-ratio:16/8;}
   .frame.std{aspect-ratio:16/10;}
   .frame img{width:100%; height:100%; object-fit:cover;}
+  .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
+  .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -120,9 +122,7 @@
       <div><span>Recognition</span><b>CC Shortlist</b></div>
     </div>
 
-    <div class="frame wide">
-      <div data-editor-video="https://player.vimeo.com/video/1216841462?h=7aec679fad" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1216841462?h=7aec679fad" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
-    </div>
+    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1216841462?h=7aec679fad" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
 
     <section class="block">
       <h2>Why the studio needed its own name</h2>
@@ -137,8 +137,8 @@
     </section>
 
     <div class="frame-pair">
-      <div class="frame std"><img src="assets/podimostudios/slide-01.jpg" alt="Podimo Studios logotype arrangements"></div>
-      <div class="frame std"><img src="assets/podimostudios/slide-02.jpg" alt="Podimo Studios identity applications"></div>
+      <div class="frame std"><img src="assets/podimostudios/slide-01.jpg" alt="Podimo Studios logotype arrangements" loading="lazy"></div>
+      <div class="frame std"><img src="assets/podimostudios/slide-02.jpg" alt="Podimo Studios identity applications" loading="lazy"></div>
     </div>
 
     <section class="block">
@@ -147,7 +147,17 @@
     </section>
 
     <div class="frame std">
-      <img src="assets/podimostudios/slide-03.jpg" alt="Podimo Studios brand system overview">
+      <img src="assets/podimostudios/slide-03.jpg" alt="Podimo Studios brand system overview" loading="lazy">
+    </div>
+
+    <div class="frame-pair">
+      <div class="frame std"><img src="assets/podimostudios/slide-04.jpg" alt="Podimo Studios slide 04" loading="lazy"></div>
+      <div class="frame std"><img src="assets/podimostudios/slide-05.jpg" alt="Podimo Studios slide 05" loading="lazy"></div>
+    </div>
+
+    <div class="frame-pair">
+      <div class="frame std"><img src="assets/podimostudios/slide-06.jpg" alt="Podimo Studios slide 06" loading="lazy"></div>
+      <div class="frame std"><img src="assets/podimostudios/slide-07.jpg" alt="Podimo Studios slide 07" loading="lazy"></div>
     </div>
   </div>
 
