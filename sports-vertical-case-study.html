@@ -83,6 +83,36 @@
   .case-quote figcaption{margin-top:22px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft);}
   .case-quote figcaption b{color:var(--ink); font-weight:600;}
 
+  /* PULL QUOTES · editorial, one voice at a time */
+  section.pullquote{padding:96px 0; border-top:1px solid var(--hair);}
+  .pullquote .pq-mark{width:14px; height:14px; background:var(--clay); margin-bottom:40px;}
+  .pullquote blockquote{margin:0;}
+  .pullquote blockquote p{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:500;
+    font-size:clamp(25px, 3.4vw, 42px);
+    line-height:1.24;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    max-width:980px;
+  }
+  .pullquote figcaption{
+    margin-top:40px;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .pullquote figcaption b{color:var(--ink); font-weight:600;}
+  section.pullquote.dark{
+    background:#0B0B0C;
+    border-top:1px solid rgba(255,255,255,0.16);
+  }
+  .pullquote.dark .pq-mark{background:#7B79FF;}
+  .pullquote.dark blockquote p{color:#fff;}
+  .pullquote.dark figcaption{color:rgba(255,255,255,0.6);}
+  .pullquote.dark figcaption b{color:#fff;}
+
   .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
   .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
   @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
@@ -115,8 +145,8 @@
   .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF; overflow-wrap:break-word;}
   .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
-  /* Word-based lockup values (e.g. "Above benchmark") render smaller than numerals and wrap, so columns never collide */
-  .lockup.words .value{font-size:clamp(24px, 3vw, 40px); line-height:0.98;}
+  /* Word-based lockup values (e.g. "Above benchmark") render smaller than numerals and wrap, so columns never collide. Scoped to stat lockups only, never quote blocks. */
+  .results-metrics .lockup.words .value{font-size:clamp(24px, 3vw, 40px); line-height:0.98;}
   .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
   .results-metrics .stat-footnotes p{margin:0 0 4px;}
 
@@ -163,7 +193,7 @@
   </div>
 
   <section class="bleed">
-    <div data-editor-video="https://player.vimeo.com/video/1216926641" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1216926641?background=1" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
+    <div data-editor-video="https://player.vimeo.com/video/1216926641" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><img src="assets/sports/sports-ticker-ksa-2.gif" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
   </section>
 
   <div class="wrap">
@@ -199,17 +229,32 @@
       </div>
     </section>
 
-    <figure class="case-quote">
-      <blockquote>
-        <p>"Nicolai has a rare ability to zoom in and out on any project, guiding both strategy and execution to the best outcome, and he gives people the room to do their best work without micromanaging. Within a year and a half we turned creative production into a well-functioning machine across multiple markets. Calm, insightful, a genuinely great leader."</p>
-      </blockquote>
-      <figcaption><b>Juraj Rutsek</b> · Global Creative Production Manager, Podimo</figcaption>
-    </figure>
+  </div>
+
+  <section class="pullquote">
+    <div class="wrap">
+      <div class="pq-mark"></div>
+      <figure>
+        <blockquote>
+          <p>"Nicolai has a rare ability to zoom in and out on any project, guiding both strategy and execution to the best outcome, and he gives people the room to do their best work without micromanaging. Within a year and a half we turned creative production into a well-functioning machine across multiple markets. Calm, insightful, a genuinely great leader."</p>
+        </blockquote>
+        <figcaption><b>Juraj Rutsek</b> · Global Creative Production Manager, Podimo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap">
 
     <div class="frame-trio">
-      <div class="frame"><img src="assets/sports/slide-04.png" alt="Debate format"></div>
+      <div class="frame"><img src="assets/sports/slide-04.gif" alt="Debate format"></div>
       <div class="frame"><img src="assets/sports/slide-05.gif" alt="Creator quote format"></div>
       <div class="frame"><img src="assets/sports/slide-06.gif" alt="Reaction format"></div>
+    </div>
+
+    <div class="frame-trio">
+      <div class="frame"><img src="assets/sports/slide-09.gif" alt="Sports slide 09" loading="lazy"></div>
+      <div class="frame"><img src="assets/sports/slide-10.gif" alt="Sports slide 10" loading="lazy"></div>
+      <div class="frame"><img src="assets/sports/slide-11.gif" alt="Sports slide 11" loading="lazy"></div>
     </div>
 
     <div class="frame std">
