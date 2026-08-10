@@ -109,12 +109,14 @@
   /* Campaign results metrics bands (numeric lockups, dark) */
   section.results-metrics{background:#0B0B0C; color:#fff; padding:80px 0;}
   .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
-  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
-  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF; overflow-wrap:break-word;}
   .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  /* Word-based lockup values (e.g. "Above benchmark") render smaller than numerals and wrap, so columns never collide */
+  .lockup.words .value{font-size:clamp(24px, 3vw, 40px); line-height:0.98;}
   .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
   .results-metrics .stat-footnotes p{margin:0 0 4px;}
 
@@ -231,7 +233,7 @@
           <span class="value">665k<sup>**</sup></span>
           <span class="label">Incremental Google searches driven by the ads</span>
         </div>
-        <div class="lockup">
+        <div class="lockup words">
           <span class="value">Above benchmark<sup>***</sup></span>
           <span class="label">Subscriptions driven vs internal target</span>
         </div>
@@ -256,11 +258,11 @@
           <span class="value">34M</span>
           <span class="label">Impressions across the tournament</span>
         </div>
-        <div class="lockup">
+        <div class="lockup words">
           <span class="value">Above benchmark<sup>*</sup></span>
           <span class="label">Subscriptions driven vs internal target</span>
         </div>
-        <div class="lockup">
+        <div class="lockup words">
           <span class="value">Top creative<sup>**</sup></span>
           <span class="label">Outperformed the campaign</span>
         </div>
