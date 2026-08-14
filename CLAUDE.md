@@ -64,7 +64,7 @@ Section order in index.html: hero (h1 "I build brands people talk about.") → F
 
 ## Access gate (cosmetic, pre-launch only)
 
-- Every HTML page carries a client-side "Private preview" access gate: a shared inline snippet (`<!-- NG ACCESS GATE -->` block in `<head>` with the overlay's `<style>`/`<script>`) plus a `<div id="ng-gate">` overlay right after `<body>` (`<!-- NG ACCESS GATE OVERLAY -->`). Code is `NG2026` (case-insensitive); success sets `sessionStorage.ng_access="granted"` for the session.
+- Every HTML page carries a client-side "Private preview" access gate: a shared inline snippet (`<!-- NG ACCESS GATE -->` block in `<head>` with the overlay's `<style>`/`<script>`) plus a `<div id="ng-gate">` overlay right after `<body>` (`<!-- NG ACCESS GATE OVERLAY -->`). Code is `sparkconversations` (case-insensitive, all whitespace stripped so `spark conversations` also passes); success sets `sessionStorage.ng_access="granted"` for the session.
 - This is COSMETIC only: client-side, view-source bypassable (the code and content sit in the page source). It exists to keep the pre-launch site out of casual view, not to secure anything. Do not put anything genuinely private behind it.
 - To remove it later (at launch): delete the two commented snippets from every page (the `<head>` `NG ACCESS GATE` block and the `NG ACCESS GATE OVERLAY` div). No other code depends on it.
 
