@@ -62,6 +62,12 @@ Section order in index.html: hero (h1 "I build brands people talk about.") → F
 - Build and review everything against the Netlify preview URL (*.netlify.app).
 - Launch, only after Nicolai signs off on the preview: add nicolaigalal.com as a custom domain in Netlify, then in GoDaddy DNS set the apex A record to Netlify's load balancer (75.2.60.5, verify against Netlify's current docs during setup) and CNAME www to the site's netlify.app address. SSL provisions automatically. The old GoDaddy-hosted site stays live until these records flip, so there is zero downtime and no half-built state visible.
 
+## Access gate (cosmetic, pre-launch only)
+
+- Every HTML page carries a client-side "Private preview" access gate: a shared inline snippet (`<!-- NG ACCESS GATE -->` block in `<head>` with the overlay's `<style>`/`<script>`) plus a `<div id="ng-gate">` overlay right after `<body>` (`<!-- NG ACCESS GATE OVERLAY -->`). Code is `NG2026` (case-insensitive); success sets `sessionStorage.ng_access="granted"` for the session.
+- This is COSMETIC only: client-side, view-source bypassable (the code and content sit in the page source). It exists to keep the pre-launch site out of casual view, not to secure anything. Do not put anything genuinely private behind it.
+- To remove it later (at launch): delete the two commented snippets from every page (the `<head>` `NG ACCESS GATE` block and the `NG ACCESS GATE OVERLAY` div). No other code depends on it.
+
 ## Content map per case (asset counts follow story beats, not a template)
 
 Naming: every case folder takes case-hero.jpg plus slide-01.jpg through slide-NN.jpg, any count. Pages must FLEX to the material present: add or remove .frame blocks (frame-pair for pairs, frame std or wide for singles) to match what exists per case. Never pad a case with empty frames and never cut a strong image to fit a pattern.
