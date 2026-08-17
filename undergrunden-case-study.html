@@ -66,6 +66,8 @@
   .frame.wide{aspect-ratio:16/8;}
   .frame.std{aspect-ratio:16/10;}
   .frame img{width:100%; height:100%; object-fit:cover;}
+  .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
+  .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -108,14 +110,14 @@
   /* Campaign results metrics bands (numeric lockups, dark) */
   section.results-metrics{background:#0B0B0C; color:#fff; padding:80px 0;}
   .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
-  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 40px;}
+  .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:52px 40px;}
   @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
   .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
-  .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
-  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
-  .results-metrics .stat-footnotes p{margin:0 0 4px;}
+  .results-metrics .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
+  .results-metrics .lockup.wide-val .value{font-size:clamp(30px, 3.6vw, 46px); white-space:nowrap;}
+  .results-metrics .band-close{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-top:52px;}
 
   .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
   .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
@@ -217,9 +219,7 @@
       <div><span>Market</span><b>Denmark</b></div>
     </div>
 
-    <div class="frame wide">
-      <div data-editor-video="https://player.vimeo.com/video/1216928727" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1216928727" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
-    </div>
+    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1216928727" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
 
     <section class="block">
       <h2>A show you couldn't show</h2>
@@ -234,14 +234,14 @@
 
   <div class="wrap">
     <section class="block">
-      <h2>The Experiment: the product as the proof</h2>
-      <p>The teaser film put a handful of well-known Danes in front of the series' authentic audio while biometric tracking and facial analysis measured what happened to them. Micro-reactions the eye normally misses: small jerks, freezes, flashes of fear and fascination at once, triggered by sound alone.</p>
+      <h2>The product as the proof</h2>
+      <p>The teaser film, the Eksperimentet segment we cut into ads, put a handful of well-known Danes in front of the series' authentic audio while biometric tracking and facial analysis measured what happened to them. Micro-reactions the eye normally misses: small jerks, freezes, flashes of fear and fascination at once, triggered by sound alone.</p>
       <p>It reads as a stunt and works as a demonstration: audio moving people measurably, using the show itself as the instrument. For a platform whose entire product is what sound can do, the teaser was the brand argument in miniature.</p>
     </section>
 
     <div class="frame-pair">
-      <div class="frame std"><img src="assets/undergrunden/slide-02.png" alt="The Experiment: biometric measurement"></div>
-      <div class="frame std"><img src="assets/undergrunden/slide-03.gif" alt="The Experiment: reactions to sound alone"></div>
+      <div class="frame std"><img src="assets/undergrunden/slide-02.png" alt="The Experiment format: biometric measurement"></div>
+      <div class="frame std"><img src="assets/undergrunden/slide-03.gif" alt="The Experiment format: reactions to sound alone"></div>
     </div>
 
     <section class="block">
@@ -257,12 +257,10 @@
 
     <section class="block">
       <h2>The conversation came to us</h2>
-      <p>The launch earned its way into culture: Denmark's national broadcaster DR covered the show in its culture pages under the headline "first they smash each other, then they share a pizza," the marketing trade press covered The Experiment as a campaign story in its own right, international outlets picked it up in English, and the series landed an IMDb listing. One launch, four kinds of earned attention.</p>
+      <p>The launch earned its way into culture: Denmark's national broadcaster DR covered the show in its culture pages under the headline "first they smash each other, then they share a pizza," the marketing trade press covered the Experiment format as a campaign story in its own right, international outlets picked it up in English, and the series landed an IMDb listing. One launch, four kinds of earned attention.</p>
     </section>
 
-    <div class="frame std">
-      <div data-editor-video="https://player.vimeo.com/video/1216928887" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1216928887" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
-    </div>
+    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1216928887" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
 
     <section class="block">
       <h2>What Show 360 proved</h2>
@@ -275,27 +273,22 @@
       <h2 class="band-kicker">Results · Undergrunden · Oct–Nov 2025</h2>
       <div class="stat-grid">
         <div class="lockup">
+          <span class="value">1.15M</span>
+          <span class="label">Danes reached, roughly 1 in 5 of the population</span>
+          <span class="source">Undergrunden, five active weeks, Oct–Nov 2025</span>
+        </div>
+        <div class="lockup">
           <span class="value">7.71%</span>
-          <span class="label">CTR across 5.5M impressions</span>
+          <span class="label">Click-through rate across 5.5M impressions</span>
+          <span class="source">Meta, full campaign</span>
         </div>
-        <div class="lockup">
-          <span class="value">2x<sup>*</sup></span>
-          <span class="label">CTR when the Eksperimentet cuts went live</span>
-        </div>
-        <div class="lockup">
-          <span class="value">1.15M<sup>**</sup></span>
-          <span class="label">Danes reached</span>
-        </div>
-        <div class="lockup">
-          <span class="value">13.0%<sup>***</sup></span>
-          <span class="label">Top creative CTR</span>
+        <div class="lockup wide-val">
+          <span class="value">4.4% → 8.8%</span>
+          <span class="label">CTR doubled in week two, when the Experiment edits went live</span>
+          <span class="source">Same media plan, new creative</span>
         </div>
       </div>
-      <div class="stat-footnotes">
-        <p>* 4.4% → 8.8% in week two · same media plan, new creative</p>
-        <p>** Roughly 1 in 5 of the Danish population, in five active weeks</p>
-        <p>*** Experiment format held the top three slots, all above 12%</p>
-      </div>
+      <p class="band-close">It wasn't one lucky asset. The Experiment format held the top three creative slots in the campaign, all above 12% CTR, against a campaign average of 7.71%.</p>
     </div>
   </section>
 

@@ -66,6 +66,8 @@
   .frame.wide{aspect-ratio:16/8;}
   .frame.std{aspect-ratio:16/10;}
   .frame img{width:100%; height:100%; object-fit:cover;}
+  .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
+  .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -205,9 +207,7 @@
       <div><span>Market</span><b>Norway</b></div>
     </div>
 
-    <div class="frame wide">
-      <div data-editor-video="https://player.vimeo.com/video/1216932047?h=617e34b25d" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1216932047?h=617e34b25d" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
-    </div>
+    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1216932047?h=617e34b25d" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
 
     <section class="block">
       <h2>A launch with a head start</h2>
@@ -281,7 +281,12 @@
           <div class="stat-lockup"><b>A fan account</b><i>Becomes the show*</i></div>
           <span class="stat-note">*The campaign channel launched disguised as a Solvang fan page, renamed as the show's editorial account at the reveal</span>
         </div>
+        <div class="stat-row">
+          <div class="stat-lockup"><b>27</b><i>National news outlets ran the story*</i></div>
+          <span class="stat-note">*Organic pickup, no media spend</span>
+        </div>
       </div>
+      <p>The teaser announced nothing. Paparazzi shots of Solvang started circulating, giant ties appeared on landmarks around the city, and he quietly listed the ties he had worn for years on Finn.no, free to collect from 'Solvang HQ'. The press assembled the story themselves. 27 national outlets ran it, VG the same day, and not one of them was paid to.</p>
     </div>
   </section>
 
