@@ -278,8 +278,14 @@
   .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .machine .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .machine .stat-grid{grid-template-columns:1fr; gap:36px;} }
-  .machine .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:var(--clay); overflow-wrap:break-word;}
-  .machine .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:var(--ink-soft); max-width:26ch;}
+  .machine .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(48px, 5.6vw, 78px); line-height:1.02; letter-spacing:-0.03em; color:var(--clay); overflow-wrap:break-word;}
+  .machine .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:var(--ink); max-width:26ch;}
+  .machine .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
+  .machine .stat-link{cursor:pointer;}
+  .machine .stat-link .label{transition:color .25s ease;}
+  .machine .stat-link:hover .label{color:var(--clay);}
+  .machine .stat-link:focus-visible{outline:2px solid var(--clay); outline-offset:4px;}
+  .machine .stat-link:focus-visible .label{color:var(--clay);}
   .machine .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid var(--hair); font-size:13px; line-height:1.7; color:var(--ink-soft);}
   .machine .stat-footnotes p{margin:0 0 4px;}
 
@@ -681,29 +687,28 @@
         <h2>The <em style="font-style:normal; color:var(--clay);">engine</em> behind it</h2>
         <span>Creative and Growth, one loop</span>
       </div>
-      <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill. Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
+      <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill. Same team, 6.5 times the creative output and a quarter of the post-production time per asset, with two to three net-new top-funnel bets produced and tested head to head every month, proven in Denmark first and then scaled. Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
       <div class="stat-grid">
         <div class="lockup">
-          <span class="value">6.5×</span>
-          <span class="label">More creative output, same team*</span>
+          <span class="value">43%</span>
+          <span class="label">Aided awareness in Denmark, up from 28% when I joined</span>
+          <span class="source">Independent brand tracker, monthly waves, 2022–2026</span>
         </div>
-        <div class="lockup">
-          <span class="value">−75%</span>
-          <span class="label">Post-production time per asset*</span>
-        </div>
-        <div class="lockup">
-          <span class="value">2–3</span>
-          <span class="label">New top-funnel bets produced and tested every month**</span>
-        </div>
-        <div class="lockup">
-          <span class="value">+50%</span>
-          <span class="label">Conversion lift from creative testing***</span>
-        </div>
-      </div>
-      <div class="stat-footnotes">
-        <p>*Before vs after implementing the AI-accelerated production pipeline, across the studio.</p>
-        <p>**Net-new concepts, not variants. Tested against each other in one market first, then scaled. Every bet ends in a decision: optimise, scale, re-test, or kill.</p>
-        <p>***Up to +50%, from cross-market creative testing inside 90 days, on top of continuous variant iteration.</p>
+        <a class="lockup stat-link" href="sports-vertical-case-study.html">
+          <span class="value">58%</span>
+          <span class="label">Of search demand traced back to the campaign</span>
+          <span class="source">Conversion lift study, 100% confidence · Sports, 2026</span>
+        </a>
+        <a class="lockup stat-link" href="sports-vertical-case-study.html">
+          <span class="value">1.8×</span>
+          <span class="label">Positive brand attitude, 10.6% to 19.4%</span>
+          <span class="source">Brand lift study, 100% confidence · Sports, 2026</span>
+        </a>
+        <a class="lockup stat-link" href="sports-vertical-case-study.html">
+          <span class="value">−21%</span>
+          <span class="label">Conversion CAC against target, all seven shows under</span>
+          <span class="source">Sports campaign 2026 · subscription-weighted</span>
+        </a>
       </div>
     </section>
   </div>
