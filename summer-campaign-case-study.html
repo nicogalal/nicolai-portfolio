@@ -90,14 +90,12 @@
   .funnel-step h3{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:19px; letter-spacing:-0.01em; margin-bottom:10px;}
   .funnel-step p{font-size:14px; line-height:1.7; color:var(--ink-soft);}
 
-  .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
-  .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
-  @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
-  .stat-lockup b, .stat-lockup i{display:block; font-family:'Bricolage Grotesque', sans-serif; font-style:normal; font-weight:500; font-size:clamp(40px, 6vw, 76px); letter-spacing:-0.03em; line-height:1.04;}
-  .stat-lockup b{color:var(--clay);}
-  .stat-lockup i{color:var(--ink);}
-  .stat-note{font-size:14px; font-weight:500; color:var(--ink-soft); justify-self:end; max-width:280px; line-height:1.65;}
-  @media (max-width:760px){ .stat-note{justify-self:start;} }
+  .stat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:52px 40px; margin-top:12px;}
+  @media (max-width:900px){ .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
+  @media (max-width:560px){ .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-dark .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-dark .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-dark .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
 
   section.bleed{margin:0 0 72px;}
   section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
@@ -149,10 +147,6 @@
   section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
   .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
   .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
-  .results-dark .stats{border-top:1px solid rgba(255,255,255,0.16); margin-bottom:0;}
-  .results-dark .stat-row{border-bottom:1px solid rgba(255,255,255,0.16);}
-  .results-dark .stat-lockup i{color:#fff;}
-  .results-dark .stat-note{color:rgba(255,255,255,0.85);}
 
   .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
   .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
@@ -332,20 +326,22 @@
   <section class="results-dark">
     <div class="wrap">
       <h2>Results</h2>
-      <p>Two engagement peaks over the flight, and honest attribution: one was a delivery effect, one was creative. The organic-looking edit is what moved people.</p>
-      <div class="stats">
-        <div class="stat-row">
-          <div class="stat-lockup"><b>36.7%</b><i>Global hook rate*</i></div>
-          <span class="stat-note">*May to August 2026, four markets</span>
+      <p>Two engagement peaks over the flight, and honest attribution: one was a delivery effect, one was creative. The organic-looking edit is what moved people. Spain ran strongest at 40% and grew to 37% of the impression mix.</p>
+      <div class="stat-grid">
+        <div class="lockup">
+          <span class="value">+62%</span>
+          <span class="label">More social interaction than the format it replaced</span>
+          <span class="source">0.103% to 0.167%, same measure on both campaigns</span>
         </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>+62%</b><i>More social interaction than the previous campaign</i></div>
+        <div class="lockup">
+          <span class="value">36.7%</span>
+          <span class="label">Hook rate, with every one of four markets above the 30% internal bar</span>
+          <span class="source">Summer on Podimo, May to August 2026</span>
         </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>40.0%</b><i>Hook rate in Spain, the strongest market</i></div>
-        </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>37%</b><i>Spain's share of impressions by peak week</i></div>
+        <div class="lockup">
+          <span class="value">3.6M</span>
+          <span class="label">Impressions across four markets</span>
+          <span class="source">Always-on, May to August 2026</span>
         </div>
       </div>
     </div>

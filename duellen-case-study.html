@@ -84,14 +84,11 @@
   .touchpoints{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px;}
   .touchpoint{font-size:12px; letter-spacing:0.04em; padding:8px 16px; border:1px solid var(--hair-strong); color:var(--ink-soft);}
 
-  .stats{margin-bottom:72px; border-top:1px solid var(--hair);}
-  .stat-row{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:center; padding:46px 0; border-bottom:1px solid var(--hair);}
-  @media (max-width:760px){ .stat-row{grid-template-columns:1fr; gap:14px;} }
-  .stat-lockup b, .stat-lockup i{display:block; font-family:'Bricolage Grotesque', sans-serif; font-style:normal; font-weight:500; font-size:clamp(40px, 6vw, 76px); letter-spacing:-0.03em; line-height:1.04;}
-  .stat-lockup b{color:var(--clay);}
-  .stat-lockup i{color:var(--ink);}
-  .stat-note{font-size:14px; font-weight:500; color:var(--ink-soft); justify-self:end; max-width:280px; line-height:1.65;}
-  @media (max-width:760px){ .stat-note{justify-self:start;} }
+  .stat-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:52px 48px; max-width:720px; margin-top:12px;}
+  @media (max-width:560px){ .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-dark .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
+  .results-dark .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-dark .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
 
   section.bleed{margin:0 0 72px;}
   section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
@@ -102,10 +99,6 @@
   section.results-dark{background:#0B0B0C; color:#fff; padding:80px 0 10px;}
   .results-dark h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(24px, 3vw, 34px); letter-spacing:-0.02em; margin-bottom:22px;}
   .results-dark > .wrap > p{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:18px;}
-  .results-dark .stats{border-top:1px solid rgba(255,255,255,0.16); margin-bottom:0;}
-  .results-dark .stat-row{border-bottom:1px solid rgba(255,255,255,0.16);}
-  .results-dark .stat-lockup i{color:#fff;}
-  .results-dark .stat-note{color:rgba(255,255,255,0.85);}
 
   .next{background:#0B0B0C; color:#fff; padding:90px 0; border-top:1px solid rgba(255,255,255,0.14);}
   .next .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
@@ -260,33 +253,19 @@
     <div class="wrap">
       <h2>The proof</h2>
       <p>What the launch demonstrated, with the campaign live now:</p>
-      <div class="stats">
-        <div class="stat-row">
-          <div class="stat-lockup"><b>Two weeks</b><i>Idea to film*</i></div>
-          <span class="stat-note">*From concept to finished hero film, national politicians and all</span>
+      <div class="stat-grid">
+        <div class="lockup">
+          <span class="value">27</span>
+          <span class="label">National news outlets ran the story</span>
+          <span class="source">Organic pickup, no media spend</span>
         </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>Speculation</b><i>As the strategy*</i></div>
-          <span class="stat-note">*Months of genuine national curiosity turned into the campaign's engine rather than announced over</span>
-        </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>A free ad</b><i>Makes headlines*</i></div>
-          <span class="stat-note">*The famous Debatten ties, given away on Finn because they'd "served their purpose": national news within hours, no brand name attached</span>
-        </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>Out of the</b><i>Comfort zone*</i></div>
-          <span class="stat-note">*Norway's best-known political figures cast against type, ending on the reveal</span>
-        </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>A fan account</b><i>Becomes the show*</i></div>
-          <span class="stat-note">*The campaign channel launched disguised as a Solvang fan page, renamed as the show's editorial account at the reveal</span>
-        </div>
-        <div class="stat-row">
-          <div class="stat-lockup"><b>27</b><i>National news outlets ran the story*</i></div>
-          <span class="stat-note">*Organic pickup, no media spend</span>
+        <div class="lockup">
+          <span class="value">Two weeks</span>
+          <span class="label">Concept to finished hero film</span>
+          <span class="source">Cast with national political figures</span>
         </div>
       </div>
-      <p>The teaser announced nothing. Paparazzi shots of Solvang started circulating, giant ties appeared on landmarks around the city, and he quietly listed the ties he had worn for years on Finn.no, free to collect from 'Solvang HQ'. The press assembled the story themselves. 27 national outlets ran it, VG the same day, and not one of them was paid to.</p>
+      <p>Nothing was announced. The campaign ran on speculation: paparazzi shots, giant ties on landmarks, and the ties Solvang had worn for years listed free on Finn.no from "Solvang HQ", because they had served their purpose. VG ran it as news the same day. The campaign channel launched disguised as a fan page and only became the show's own account at the reveal, and Norway's best-known political figures were cast against type with the turn held to the end.</p>
     </div>
   </section>
 
