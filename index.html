@@ -275,6 +275,13 @@
   section.machine{padding:96px 0; border-bottom:1px solid var(--hair);}
   .machine-intro{font-size:16px; line-height:1.85; color:var(--ink-soft); max-width:640px; margin-bottom:56px;}
   .machine-intro b{color:var(--ink); font-weight:500;}
+  /* Engine right-column decorative animation */
+  .machine-top{display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:start; margin-bottom:56px;}
+  .machine-top .machine-intro{margin-bottom:0;}
+  .machine-media{margin:0; min-width:0;}
+  .decor-video{display:block; width:100%; height:auto; border:0; background:#FFFFFF;}
+  .machine-media figcaption{margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
+  @media (max-width:1024px){ .machine-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
   .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .machine .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .machine .stat-grid{grid-template-columns:1fr; gap:36px;} }
@@ -689,7 +696,16 @@
         <h2>The <em style="font-style:normal; color:var(--clay);">engine</em> behind it</h2>
         <span>Creative and Growth, one loop</span>
       </div>
-      <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill. Same team, 6.5 times the creative output and a quarter of the post-production time per asset, with two to three net-new top-funnel bets produced and tested head to head every month, proven in Denmark first and then scaled. Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
+      <div class="machine-top">
+        <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill. Same team, 6.5 times the creative output and a quarter of the post-production time per asset, with two to three net-new top-funnel bets produced and tested head to head every month, proven in Denmark first and then scaled. Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
+        <figure class="machine-media">
+          <video class="decor-video" muted playsinline preload="metadata" poster="assets/theengine-poster.png">
+            <source src="assets/theengine.webm" type="video/webm">
+            <source src="assets/theengine.mp4" type="video/mp4">
+          </video>
+          <figcaption>Every asset from one launch, by funnel stage.</figcaption>
+        </figure>
+      </div>
       <div class="stat-grid">
         <div class="lockup">
           <span class="value">43%</span>
@@ -926,5 +942,19 @@
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  // Engine decorative animation: play once on entering the viewport, hold the final frame (no loop).
+  (function(){
+    var v = document.querySelector('.decor-video');
+    if(!v) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // reduced motion: poster only
+    var played = false;
+    function go(){ if(played) return; played = true; var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+    if(!('IntersectionObserver' in window)){ go(); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ go(); io.disconnect(); } });
+    }, {threshold:0.4});
+    io.observe(v);
+  })();
 </script>
 </body></html>
