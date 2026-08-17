@@ -280,13 +280,15 @@
   .machine-top .machine-intro{margin-bottom:0;}
   .mandate-top{display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:start; margin-bottom:52px;}
   .mandate-top .mandate-intro{margin-bottom:0;}
+  .results-top{display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:start; margin-bottom:52px;}
+  .results-top .band-lead{margin-bottom:0;}
   .media-col{margin:0; min-width:0;}
   /* Shared decorative background-video component (not the hero .video-embed) */
   .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
   .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
   .bg-embed img{object-fit:cover;}
   .media-col figcaption{margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
-  @media (max-width:1024px){ .machine-top, .mandate-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
+  @media (max-width:1024px){ .machine-top, .mandate-top, .results-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
   .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .machine .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .machine .stat-grid{grid-template-columns:1fr; gap:36px;} }
@@ -748,7 +750,14 @@
         <h2>One bet, scaled</h2>
         <span>VoiceNotes · Always-on · Jan–Aug 2026 · five markets</span>
       </div>
-      <p class="band-lead">VoiceNotes started as one of the monthly top-funnel bets. It won its test, then became the always-on format across five markets.</p>
+      <div class="results-top">
+        <p class="band-lead">VoiceNotes started as one of the monthly top-funnel bets. It won its test, then became the always-on format across five markets.</p>
+        <figure class="media-col">
+          <div class="bg-embed" style="aspect-ratio:426/152;" data-embed="https://player.vimeo.com/video/1218873600?h=4e36fcc1ef&amp;background=1&amp;dnt=1&amp;autopause=0" data-title="VoiceNotes: a row of vertical social-style films from across the markets">
+            <img src="assets/voicenotes-poster.jpg" alt="A row of vertical social video clips from the VoiceNotes campaign" loading="lazy">
+          </div>
+        </figure>
+      </div>
       <div class="stat-grid">
         <div class="lockup">
           <span class="value">4.78%</span>
