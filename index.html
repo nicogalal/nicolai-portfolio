@@ -278,10 +278,15 @@
   /* Engine right-column decorative animation */
   .machine-top{display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:start; margin-bottom:56px;}
   .machine-top .machine-intro{margin-bottom:0;}
-  .machine-media{margin:0; min-width:0;}
-  .decor-video{display:block; width:100%; height:auto; border:0; background:#FFFFFF;}
-  .machine-media figcaption{margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
-  @media (max-width:1024px){ .machine-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
+  .mandate-top{display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:start; margin-bottom:52px;}
+  .mandate-top .mandate-intro{margin-bottom:0;}
+  .media-col{margin:0; min-width:0;}
+  /* Shared decorative background-video component (not the hero .video-embed) */
+  .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
+  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+  .bg-embed img{object-fit:cover;}
+  .media-col figcaption{margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
+  @media (max-width:1024px){ .machine-top, .mandate-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
   .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .machine .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .machine .stat-grid{grid-template-columns:1fr; gap:36px;} }
@@ -672,7 +677,14 @@
         <h2>Creativity that <em style="font-style:normal; color:var(--clay);">performs</em></h2>
         <span>The Mandate</span>
       </div>
-      <p class="mandate-intro"><b>My mandate at Podimo runs across three lanes,</b> delivered by a global team with local creatives in six markets. Underneath it sits a campaign portfolio that treats shows like brands: tentpoles that build creator super-brands, acquirers that convert, engagers that retain, and key cultural moments that keep the conversation going. The throughline is work that stays culturally relevant and commercially accountable, the way Undergrunden turned a hidden world into national conversation and proved it in the numbers.</p>
+      <div class="mandate-top">
+        <p class="mandate-intro"><b>My mandate at Podimo runs across three lanes,</b> delivered by a global team with local creatives in six markets. Underneath it sits a campaign portfolio that treats shows like brands: tentpoles that build creator super-brands, acquirers that convert, engagers that retain, and key cultural moments that keep the conversation going. The throughline is work that stays culturally relevant and commercially accountable, the way Undergrunden turned a hidden world into national conversation and proved it in the numbers.</p>
+        <figure class="media-col">
+          <div class="bg-embed" style="aspect-ratio:426/228;" data-embed="https://player.vimeo.com/video/1218864185?background=1&amp;dnt=1&amp;autopause=0" data-title="Podimo Studios brand animation: the studio logotype assembling with show content">
+            <img src="assets/brands-poster.jpg" alt="Podimo Studios logotype with show thumbnails on a dark background" loading="lazy">
+          </div>
+        </figure>
+      </div>
       <div class="lanes">
         <div class="lane">
           <h3>Brand Systems</h3>
@@ -698,11 +710,10 @@
       </div>
       <div class="machine-top">
         <p class="machine-intro"><b>Great work at pace isn't heroics, it's infrastructure.</b> I run a standing loop between creative and growth: proven formats iterate on signal (hook, hold, conversion), new bets test head-to-head, and every asset ends in a decision. Optimise, scale, re-test, or kill. Same team, 6.5 times the creative output and a quarter of the post-production time per asset, with two to three net-new top-funnel bets produced and tested head to head every month, proven in Denmark first and then scaled. Every cycle closes on five questions: what did we test, what did we expect, what did the data show, what did we learn creatively, and what's next.</p>
-        <figure class="machine-media">
-          <video class="decor-video" muted playsinline preload="metadata" poster="assets/theengine-poster.png">
-            <source src="assets/theengine.webm" type="video/webm">
-            <source src="assets/theengine.mp4" type="video/mp4">
-          </video>
+        <figure class="media-col">
+          <div class="bg-embed" style="aspect-ratio:426/198;" data-embed="https://player.vimeo.com/video/1218864186?h=efb1c18248&amp;background=1&amp;dnt=1&amp;autopause=0" data-title="Every asset from one launch animating into top, mid, and lower funnel stages">
+            <img src="assets/theengine-poster.png" alt="Every asset from one launch, sorted into top, mid, and lower funnel stages" loading="lazy">
+          </div>
           <figcaption>Every asset from one launch, by funnel stage.</figcaption>
         </figure>
       </div>
@@ -943,18 +954,24 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  // Engine decorative animation: play once on entering the viewport, hold the final frame (no loop).
+  // Decorative background videos: under prefers-reduced-motion keep the still image and never load the iframe;
+  // otherwise upgrade each .bg-embed to its Vimeo background player.
   (function(){
-    var v = document.querySelector('.decor-video');
-    if(!v) return;
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // reduced motion: poster only
-    var played = false;
-    function go(){ if(played) return; played = true; var p = v.play(); if(p && p.catch) p.catch(function(){}); }
-    if(!('IntersectionObserver' in window)){ go(); return; }
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ go(); io.disconnect(); } });
-    }, {threshold:0.4});
-    io.observe(v);
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep the still <img>
+    var boxes = document.querySelectorAll('.bg-embed[data-embed]');
+    for(var i=0;i<boxes.length;i++){
+      (function(box){
+        var f = document.createElement('iframe');
+        f.src = box.getAttribute('data-embed');
+        f.title = box.getAttribute('data-title') || 'Background animation';
+        f.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
+        f.setAttribute('frameborder','0');
+        f.setAttribute('loading','lazy');
+        var img = box.querySelector('img');
+        box.appendChild(f);
+        if(img) img.parentNode.removeChild(img);
+      })(boxes[i]);
+    }
   })();
 </script>
 </body></html>
