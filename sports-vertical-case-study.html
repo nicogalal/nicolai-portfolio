@@ -68,6 +68,10 @@
   .frame img{width:100%; height:100%; object-fit:cover;}
   .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
   .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  /* Shared decorative background-video component (same as homepage) */
+  .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
+  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+  .bg-embed img{object-fit:cover;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -332,7 +336,10 @@
       <div class="frame"><video src="assets/sports/slide-11.mp4" muted="" autoplay="" loop="" playsinline="" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
     </div>
 
-    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1217032909?h=925661f96e" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
+    <div class="bg-embed" style="aspect-ratio:424/240; margin-bottom:64px;" data-embed="https://player.vimeo.com/video/1218887605?background=1&amp;dnt=1&amp;autopause=0" data-title="Sports on Podimo: a continuous one-shot campaign film">
+      <img src="assets/sports/oneshoot-poster.jpg" alt="Sports on Podimo one-shot campaign film" loading="lazy">
+    </div>
+    <div class="video-embed"><iframe src="https://player.vimeo.com/video/1217032909?h=925661f96e&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
   </div>
 
   <section class="bleed">
@@ -378,6 +385,23 @@
     </div>
   </section>
 
-
+<script>
+  /* Decorative background videos: swap the poster still for a Vimeo iframe,
+     unless the visitor prefers reduced motion (then the still stays). */
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('.bg-embed[data-embed]').forEach(function(el){
+      var iframe = document.createElement('iframe');
+      iframe.src = el.getAttribute('data-embed');
+      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('title', el.getAttribute('data-title') || 'Background video');
+      el.appendChild(iframe);
+      var img = el.querySelector('img');
+      if (img) img.remove();
+    });
+  })();
+</script>
 
 </body></html>
