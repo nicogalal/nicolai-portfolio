@@ -101,6 +101,10 @@
 
   section.bleed{margin:0 0 72px;}
   section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
+  /* Shared decorative background-video component (same as homepage) */
+  .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
+  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block; max-height:none;}
+  .bg-embed img{object-fit:cover;}
   .frame-trio{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;}
   @media (max-width:860px){ .frame-trio{grid-template-columns:1fr;} }
   .frame-trio .frame{margin-bottom:0; aspect-ratio:4/5;}
@@ -320,7 +324,9 @@
   </div>
 
   <section class="bleed">
-    <img src="assets/summer/slide-08.jpg" alt="Summer on Podimo out in the world">
+    <div class="bg-embed" style="aspect-ratio:426/202;" data-embed="https://player.vimeo.com/video/1218872100?background=1&amp;dnt=1&amp;autopause=0" data-title="The engine: every asset from one launch animating into top, mid, and lower funnel stages">
+      <img src="assets/engine-poster.jpg" alt="Every asset from one launch, sorted into top, mid, and lower funnel stages" loading="lazy">
+    </div>
   </section>
 
   <section class="results-dark">
@@ -368,5 +374,25 @@
   </section>
 
 
-
+<script>
+  // Decorative background video: under prefers-reduced-motion keep the still image and never load the iframe;
+  // otherwise upgrade the .bg-embed to its Vimeo background player.
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep the still <img>
+    var boxes = document.querySelectorAll('.bg-embed[data-embed]');
+    for(var i=0;i<boxes.length;i++){
+      (function(box){
+        var f = document.createElement('iframe');
+        f.src = box.getAttribute('data-embed');
+        f.title = box.getAttribute('data-title') || 'Background animation';
+        f.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
+        f.setAttribute('frameborder','0');
+        f.setAttribute('loading','lazy');
+        var img = box.querySelector('img');
+        box.appendChild(f);
+        if(img) img.parentNode.removeChild(img);
+      })(boxes[i]);
+    }
+  })();
+</script>
 </body></html>
