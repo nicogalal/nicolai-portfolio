@@ -286,22 +286,21 @@
   .machine .stat-link:hover .label{color:var(--clay);}
   .machine .stat-link:focus-visible{outline:2px solid var(--clay); outline-offset:4px;}
   .machine .stat-link:focus-visible .label{color:var(--clay);}
-  .machine .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid var(--hair); font-size:13px; line-height:1.7; color:var(--ink-soft);}
-  .machine .stat-footnotes p{margin:0 0 4px;}
 
   /* Campaign results metrics band (numeric lockups, dark, homepage rhythm) */
   section.results-metrics{background:#0B0B0C; color:#fff; padding:96px 0;}
-  .results-metrics .band-kicker{font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:44px;}
+  section.results-metrics .section-head span{color:rgba(255,255,255,0.6);}
+  .results-metrics .band-lead{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-bottom:52px;}
+  .results-metrics .band-close{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-top:52px;}
   .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:52px 48px;}
   @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
   .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF; overflow-wrap:break-word;}
   .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
+  .results-metrics .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
   /* Word-based lockup values (e.g. "Above benchmark") render smaller than numerals and wrap, so columns never collide. Scoped to stat lockups only, never quote blocks. */
   .machine .lockup.words .value, .results-metrics .lockup.words .value{font-size:clamp(24px, 3vw, 40px); line-height:0.98;}
-  .results-metrics .stat-footnotes{margin-top:56px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.16); font-size:13px; line-height:1.7; color:rgba(255,255,255,0.55);}
-  .results-metrics .stat-footnotes p{margin:0 0 4px;}
 
   /* ABOUT */
   section.about{padding:96px 0; border-bottom:1px solid var(--hair);}
@@ -715,24 +714,29 @@
 
   <section class="results-metrics">
     <div class="wrap">
-      <h2 class="band-kicker">The engine, shipping · Always-on · Jan–Aug 2026 · five markets</h2>
+      <div class="section-head">
+        <h2>One bet, scaled</h2>
+        <span>VoiceNotes · Always-on · Jan–Aug 2026 · five markets</span>
+      </div>
+      <p class="band-lead">VoiceNotes started as one of the monthly top-funnel bets. It won its test, then became the always-on format across five markets.</p>
       <div class="stat-grid">
         <div class="lockup">
-          <span class="value">38.9%<sup>*</sup></span>
-          <span class="label">Hook rate</span>
-        </div>
-        <div class="lockup words">
-          <span class="value">Under target</span>
-          <span class="label">Cost per landing page view, the campaigns' core KPI</span>
+          <span class="value">4.78%</span>
+          <span class="label">Click-through rate across 15.6M impressions</span>
+          <span class="source">VoiceNotes, Jan–Aug 2026</span>
         </div>
         <div class="lockup">
-          <span class="value">+62%</span>
-          <span class="label">Social interaction, Summer campaign vs the previous</span>
+          <span class="value">38.9%</span>
+          <span class="label">Hook rate, the share of impressions that become 3-second views</span>
+          <span class="source">Against a 30% internal success bar</span>
+        </div>
+        <div class="lockup">
+          <span class="value">4.69M</span>
+          <span class="label">People reached across five markets</span>
+          <span class="source">At 3.3 average frequency</span>
         </div>
       </div>
-      <div class="stat-footnotes">
-        <p>* Internal success bar: 30% · best asset 53.4% hook and 7.44% CTR</p>
-      </div>
+      <p class="band-close">The best asset of the year hit 53.4% hook and 7.44% CTR. Summer26, the next bet through the loop, beat VoiceNotes on social interaction. The system keeps producing the thing that replaces the last winner.</p>
     </div>
   </section>
 
@@ -772,7 +776,7 @@
           <div class="resume-year">2022–Present</div>
           <div class="resume-role">
             <h4>VP, Global Brand &amp; Creative · Podimo</h4>
-            <p>Defined Brand &amp; Creative's mandate across three lanes (brand systems, high-impact campaigns, and always-on marketing) and built the campaign portfolio model (tentpoles, acquirers, engagers, key moments) that shifted launch marketing from one-off campaigns to a repeatable, culturally-localized system. Built and led a 30-person global creative org across 6 markets, scoring work on engagement metrics to decide what to optimise, scale, or kill. Built an AI-powered post-production pipeline cutting editing time 75% and scaling output 6.5×. Promoted from Executive Creative Director (parental cover), where cross-market creative testing lifted conversion up to 50% in 90 days.</p>
+            <p>Defined Brand &amp; Creative's mandate across three lanes (brand systems, high-impact campaigns, and always-on marketing) and built the campaign portfolio model (tentpoles, acquirers, engagers, key moments) that shifted launch marketing from one-off campaigns to a repeatable, culturally-localized system. Built and led a 30-person global creative org across 6 markets, scoring work on engagement metrics to decide what to optimise, scale, or kill. Built an AI-powered post-production pipeline cutting post-production time 75% and scaling output 6.5×. Promoted from Executive Creative Director (parental cover), where cross-market creative testing lifted conversion up to 50% in 90 days.</p>
           </div>
         </div>
         <div class="resume-block">
