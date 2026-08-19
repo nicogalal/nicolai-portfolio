@@ -313,8 +313,10 @@
   @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
   .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF; overflow-wrap:break-word;}
   .results-metrics .lockup .value sup{font-size:0.32em; font-weight:500; vertical-align:top; letter-spacing:0; margin-left:0.12em; color:rgba(255,255,255,0.5);}
+  .results-metrics .lockup{display:flex; flex-direction:column;}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
-  .results-metrics .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
+  /* Source pinned to the bottom of each equal-height cell so all sources in a row bottom-align. */
+  .results-metrics .lockup .source{display:block; margin-top:auto; padding-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
   /* Word-based lockup values (e.g. "Above benchmark") render smaller than numerals and wrap, so columns never collide. Scoped to stat lockups only, never quote blocks. */
   .machine .lockup.words .value, .results-metrics .lockup.words .value{font-size:clamp(24px, 3vw, 40px); line-height:0.98;}
 
@@ -763,13 +765,13 @@
       <div class="stat-grid">
         <div class="lockup">
           <span class="value">4.78%</span>
-          <span class="label">Click-through rate across 15.6M impressions</span>
-          <span class="source">VoiceNotes, Jan–Aug 2026</span>
+          <span class="label">Click-through rate across 15.6M impressions, about three times the paid-social average</span>
+          <span class="source">VoiceNotes, Jan–Aug 2026 · platform average runs 1.5 to 1.7%</span>
         </div>
         <div class="lockup">
           <span class="value">38.9%</span>
           <span class="label">Hook rate, the share of impressions that become 3-second views</span>
-          <span class="source">Against a 30% internal success bar</span>
+          <span class="source">Against our 30% internal bar · industry benchmarks treat 35% and above as top-tier</span>
         </div>
         <div class="lockup">
           <span class="value">4.69M</span>

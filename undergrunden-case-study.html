@@ -113,9 +113,11 @@
   .results-metrics .stat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:52px 40px;}
   @media (max-width:900px){ .results-metrics .stat-grid{grid-template-columns:1fr 1fr; gap:44px 32px;} }
   @media (max-width:560px){ .results-metrics .stat-grid{grid-template-columns:1fr; gap:36px;} }
+  .results-metrics .lockup{display:flex; flex-direction:column;}
   .results-metrics .lockup .value{display:block; font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(40px, 4.6vw, 64px); line-height:1.02; letter-spacing:-0.03em; color:#7B79FF;}
   .results-metrics .lockup .label{display:block; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:15px; font-weight:500; line-height:1.5; color:rgba(255,255,255,0.82); max-width:26ch;}
-  .results-metrics .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
+  /* Source pinned to the bottom of each equal-height cell so all sources in a row bottom-align. */
+  .results-metrics .lockup .source{display:block; margin-top:auto; padding-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
   .results-metrics .lockup.wide-val .value{font-size:clamp(30px, 3.6vw, 46px); white-space:nowrap;}
   .results-metrics .band-close{font-size:16px; line-height:1.85; color:rgba(255,255,255,0.72); max-width:640px; margin-top:52px;}
 
@@ -279,8 +281,8 @@
         </div>
         <div class="lockup">
           <span class="value">7.71%</span>
-          <span class="label">Click-through rate across 5.5M impressions</span>
-          <span class="source">Meta, full campaign</span>
+          <span class="label">Click-through rate across 5.5M impressions, roughly five times the paid-social average</span>
+          <span class="source">Meta, full campaign · platform average runs 1.5 to 1.7%</span>
         </div>
         <div class="lockup wide-val">
           <span class="value">4.4% → 8.8%</span>
