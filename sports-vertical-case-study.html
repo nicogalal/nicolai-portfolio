@@ -28,7 +28,7 @@
   html{scroll-behavior:smooth;}
   body{background:var(--cream); color:var(--ink); font-family:'Instrument Sans', sans-serif; -webkit-font-smoothing:antialiased;}
   ::selection{background:var(--clay); color:#fff;}
-  img,video{max-width:100%; display:block;}
+  img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
   @media (max-width:760px){ .wrap{padding:0 22px;} }
@@ -65,13 +65,13 @@
   .frame{background:var(--cream-2); border:1px solid var(--hair); overflow:hidden; margin-bottom:64px;}
   .frame.wide{aspect-ratio:16/8;}
   .frame.std{aspect-ratio:16/10;}
-  .frame img,.frame video{width:100%; height:100%; object-fit:cover; display:block;}
+  .frame img{width:100%; height:100%; object-fit:cover;}
   .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
   .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   /* Shared decorative background-video component (same as homepage) */
   .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
-  .bg-embed iframe, .bg-embed img, .bg-embed video{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
-  .bg-embed img,.bg-embed video{object-fit:cover;}
+  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+  .bg-embed img{object-fit:cover;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -135,9 +135,7 @@
   @media (max-width:760px){ .stat-note{justify-self:start;} }
 
   section.bleed{margin:0 0 72px;}
-  section.bleed img,section.bleed video{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
-  /* Media inside a fixed-ratio embed wrapper fills it; the 78vh cap above must not clip it */
-  section.bleed [data-editor-video] > *,[data-editor-video] > img,[data-editor-video] > video,[data-editor-video] > iframe{position:absolute; inset:0; width:100%; height:100%; max-height:none; object-fit:cover; display:block; border:0;}
+  section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
   .frame-trio{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;}
   @media (max-width:860px){ .frame-trio{grid-template-columns:1fr;} }
   .frame-trio .frame{margin-bottom:0; aspect-ratio:4/5;}
@@ -270,7 +268,7 @@
   </div>
 
   <section class="bleed">
-    <div data-editor-video="https://player.vimeo.com/video/1217020810" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><video autoplay muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;border:0"><source src="assets/sports/6a884c5f01261663d0b39647-11-sport-1.mp4" type="video/mp4"></video></div>
+    <div data-editor-video="https://player.vimeo.com/video/1217020810" style="position: relative; width: 100%; aspect-ratio: 16 / 9;"><iframe src="https://player.vimeo.com/video/1217020810?background=1" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy" title="Video"></iframe></div>
   </section>
 
   <div class="wrap">
@@ -288,7 +286,7 @@
     </section>
 
     <div class="frame-pair">
-      <div class="frame std"><img src="assets/sports/slide-02.png" alt="Sports on Podimo hero film frame"></div>
+      <div class="frame std"><video src="assets/sports/slide-02.mp4" muted="" autoplay="" loop="" playsinline="" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
       <div class="frame std"><img src="assets/sports/slide-03.png" alt="Show strategy building the super-brand"></div>
     </div>
 
@@ -324,14 +322,14 @@
   <div class="wrap">
 
     <div class="frame-trio">
-      <div class="frame"><img src="assets/sports/slide-04.png" alt="Debate format"></div>
+      <div class="frame"><img src="assets/sports/slide-04.gif" alt="Debate format"></div>
       <div class="frame"><img src="assets/sports/slide-05.gif" alt="Creator quote format"></div>
-      <div class="frame"><video autoplay muted loop playsinline preload="metadata" aria-label="Reaction format"><source src="assets/sports/slide-06.mp4" type="video/mp4"></video></div>
+      <div class="frame"><img src="assets/sports/slide-06.gif" alt="Reaction format"></div>
     </div>
 
     <div class="frame-trio">
       <div class="frame"><img src="assets/sports/slide-09.gif" alt="Sports slide 09" loading="lazy"></div>
-      <div class="frame"><img src="assets/sports/slide-10.png" alt="Sports slide 10" loading="lazy"></div>
+      <div class="frame"><img src="assets/sports/slide-10.gif" alt="Sports slide 10" loading="lazy"></div>
       <div class="frame"><video src="assets/sports/slide-11.mp4" muted="" autoplay="" loop="" playsinline="" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
     </div>
 
@@ -402,5 +400,4 @@
   })();
 </script>
 
-<script src="edit-mode.js"></script>
 </body></html>
