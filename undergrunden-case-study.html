@@ -130,9 +130,10 @@
   .next a:hover h2{opacity:0.8;}
   .next .all{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:4px;}
   /* Social-native strip · organic 9:16 content, 5 across (2 across on mobile) */
-  .frame-social{display:grid; grid-template-columns:repeat(5,1fr); gap:24px; margin-bottom:64px;}
+  .frame-social{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-social{grid-template-columns:1fr 1fr;} }
-  .frame-social .frame{margin-bottom:0; aspect-ratio:9/16;}
+  .frame-social .frame{margin-bottom:0; aspect-ratio:9/16; position:relative;}
+  .frame-social .frame > iframe,.frame-social .frame > video,.frame-social .frame > img{position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover; display:block;}
   .frame-cap{font-size:13px; letter-spacing:0.02em; color:var(--ink-soft); margin-bottom:20px;}
 </style>
 <!-- NG ACCESS GATE · cosmetic pre-launch overlay · remove this block AND the #ng-gate overlay div to disable -->
