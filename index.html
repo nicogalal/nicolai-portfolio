@@ -34,7 +34,7 @@
     -webkit-font-smoothing:antialiased;
   }
   ::selection{background:var(--clay); color:#fff;}
-  img{max-width:100%; display:block;}
+  img,video{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
 
   .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
@@ -182,12 +182,13 @@
     transition:border-color .3s ease;
   }
   .work-card:hover .frame{border-color:var(--clay);}
-  .work-card .frame img{
+  .work-card .frame img,
+  .work-card .frame video{
     width:100%; height:100%;
     object-fit:cover;
     transition:transform .5s ease;
   }
-  .work-card:hover .frame img{transform:scale(1.035);}
+  .work-card:hover .frame img,.work-card:hover .frame video{transform:scale(1.035);}
   .work-card h3{transition:color .25s ease;}
   .work-card:hover h3{color:var(--clay);}
   .work-meta{
@@ -285,8 +286,8 @@
   .media-col{margin:0; min-width:0;}
   /* Shared decorative background-video component (not the hero .video-embed) */
   .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
-  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
-  .bg-embed img{object-fit:cover;}
+  .bg-embed iframe, .bg-embed img, .bg-embed video{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+  .bg-embed img,.bg-embed video{object-fit:cover;}
   .media-col figcaption{margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:var(--ink-soft);}
   @media (max-width:1024px){ .machine-top, .mandate-top, .results-top{grid-template-columns:1fr; gap:28px; margin-bottom:44px;} }
   .machine .stat-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:52px 48px;}
@@ -335,7 +336,8 @@
     border:1px solid var(--hair);
     overflow:hidden;
   }
-  .about-photo img{
+  .about-photo img,
+  .about-photo video{
     width:100%; height:100%;
     object-fit:cover;
     object-position:56% 50%;
@@ -998,4 +1000,5 @@
     }
   })();
 </script>
+<script src="edit-mode.js"></script>
 </body></html>

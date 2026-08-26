@@ -28,7 +28,7 @@
   html{scroll-behavior:smooth;}
   body{background:var(--cream); color:var(--ink); font-family:'Instrument Sans', sans-serif; -webkit-font-smoothing:antialiased;}
   ::selection{background:var(--clay); color:#fff;}
-  img{max-width:100%; display:block;}
+  img,video{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:1180px; margin:0 auto; padding:0 56px;}
   @media (max-width:760px){ .wrap{padding:0 22px;} }
@@ -69,7 +69,7 @@
   .video-embed{position:relative; width:100%; aspect-ratio:16/9; background:#0B0B0C;}
   .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .frame-phone{width:280px; margin:0 auto 64px; border:1px solid var(--hair); border-radius:24px; overflow:hidden; background:var(--cream-2);}
-  .frame-phone img{width:100%; height:auto; display:block;}
+  .frame-phone img,.frame-phone video{width:100%; height:auto; display:block;}
   .frame-pair{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:64px;}
   @media (max-width:760px){ .frame-pair{grid-template-columns:1fr;} }
   .frame-pair .frame{margin-bottom:0;}
@@ -98,11 +98,13 @@
   .results-dark .lockup .source{display:block; margin-top:8px; font-family:'Instrument Sans', sans-serif; font-size:12px; line-height:1.45; color:rgba(255,255,255,0.5);}
 
   section.bleed{margin:0 0 72px;}
-  section.bleed img{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
+  section.bleed img,section.bleed video{width:100%; height:auto; max-height:78vh; object-fit:cover; display:block; background:var(--cream-2);}
+  /* Media inside a fixed-ratio embed wrapper fills it; the 78vh cap above must not clip it */
+  section.bleed [data-editor-video] > *,[data-editor-video] > img,[data-editor-video] > video,[data-editor-video] > iframe{position:absolute; inset:0; width:100%; height:100%; max-height:none; object-fit:cover; display:block; border:0;}
   /* Shared decorative background-video component (same as homepage) */
   .bg-embed{position:relative; width:100%; margin:0; background:transparent;}
-  .bg-embed iframe, .bg-embed img{position:absolute; inset:0; width:100%; height:100%; border:0; display:block; max-height:none;}
-  .bg-embed img{object-fit:cover;}
+  .bg-embed iframe, .bg-embed img, .bg-embed video{position:absolute; inset:0; width:100%; height:100%; border:0; display:block; max-height:none;}
+  .bg-embed img,.bg-embed video{object-fit:cover;}
   .frame-trio{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px;}
   @media (max-width:860px){ .frame-trio{grid-template-columns:1fr;} }
   .frame-trio .frame{margin-bottom:0; aspect-ratio:4/5;}
@@ -391,4 +393,5 @@
     }
   })();
 </script>
+<script src="edit-mode.js"></script>
 </body></html>
