@@ -109,8 +109,75 @@
   .next a:hover h2{opacity:0.8;}
   .next .all{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:4px;}
 </style>
+<!-- NG ACCESS GATE · cosmetic pre-launch overlay · remove this block AND the #ng-gate overlay div to disable -->
+<style>
+  html.ng-locked body{overflow:hidden;}
+  #ng-gate{display:none;}
+  html.ng-locked #ng-gate{display:flex; position:fixed; inset:0; z-index:9999; background:#FFFFFF; align-items:center; justify-content:center; padding:24px; font-family:'Instrument Sans', sans-serif;}
+  #ng-gate .ng-col{display:flex; flex-direction:column; align-items:center; text-align:center; width:100%; max-width:360px;}
+  #ng-gate .ng-mark{display:flex; align-items:center; justify-content:center; width:34px; height:34px; background:#1D1D1F; color:#fff; font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:13px; letter-spacing:0.02em; margin-bottom:28px;}
+  #ng-gate h2{font-family:'Bricolage Grotesque', sans-serif; font-weight:500; font-size:clamp(28px, 5vw, 48px); line-height:1.05; letter-spacing:-0.02em; color:#1D1D1F; margin:0 0 12px;}
+  #ng-gate p{font-family:'Instrument Sans', sans-serif; font-size:16px; line-height:1.6; color:#6E6E73; margin:0 0 28px;}
+  #ng-gate .ng-form{display:flex; gap:10px; width:100%;}
+  #ng-gate input{flex:1; height:44px; padding:0 14px; border:1px solid rgba(29,29,31,0.22); background:#fff; color:#1D1D1F; font-family:'Instrument Sans', sans-serif; font-size:15px; outline:none;}
+  #ng-gate input:focus{border-color:#3D3BF3;}
+  #ng-gate button{height:44px; padding:0 22px; border:0; background:#3D3BF3; color:#fff; font-family:'Instrument Sans', sans-serif; font-weight:500; font-size:14px; letter-spacing:0.02em; cursor:pointer;}
+  #ng-gate .ng-msg{min-height:18px; margin-top:14px; font-family:'Instrument Sans', sans-serif; font-size:13px; color:#3D3BF3; letter-spacing:0.02em;}
+  #ng-gate.ng-shake input{animation:ngShake .4s;}
+  @keyframes ngShake{10%,90%{transform:translateX(-2px);}20%,80%{transform:translateX(4px);}30%,50%,70%{transform:translateX(-7px);}40%,60%{transform:translateX(7px);}}
+  @media (prefers-reduced-motion: reduce){ #ng-gate.ng-shake input{animation:none;} }
+</style>
+<script>
+(function(){
+  var granted=false;
+  try{ granted = sessionStorage.getItem('ng_access')==='granted'; }catch(e){}
+  if(granted) return;
+  document.documentElement.classList.add('ng-locked');
+  function init(){
+    var gate=document.getElementById('ng-gate');
+    if(!gate) return;
+    var input=document.getElementById('ng-gate-input'),
+        btn=document.getElementById('ng-gate-btn'),
+        msg=document.getElementById('ng-gate-msg');
+    function fail(){
+      msg.textContent='Not quite.';
+      gate.classList.remove('ng-shake');
+      void gate.offsetWidth;
+      gate.classList.add('ng-shake');
+      input.select();
+    }
+    function submit(){
+      if((input.value||'').replace(/\s+/g,'').toLowerCase()==='sparkconversations'){
+        try{ sessionStorage.setItem('ng_access','granted'); }catch(e){}
+        document.documentElement.classList.remove('ng-locked');
+        if(gate.parentNode){ gate.parentNode.removeChild(gate); }
+      } else { fail(); }
+    }
+    btn.addEventListener('click', submit);
+    input.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); submit(); } });
+    input.focus();
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>
+<!-- /NG ACCESS GATE -->
 </head>
 <body>
+<!-- NG ACCESS GATE OVERLAY · cosmetic pre-launch · remove with the head block -->
+<div id="ng-gate" role="dialog" aria-modal="true" aria-label="Private preview access">
+  <div class="ng-col">
+    <div class="ng-mark">NG</div>
+    <h2>I build brands worth protecting.</h2>
+    <p>Starting with this one.</p>
+    <div class="ng-form">
+      <input id="ng-gate-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Access code" placeholder="Access code">
+      <button id="ng-gate-btn" type="button">Enter</button>
+    </div>
+    <div class="ng-msg" id="ng-gate-msg" aria-live="polite"></div>
+  </div>
+</div>
+<!-- /NG ACCESS GATE OVERLAY -->
 
   <header class="topbar-outer">
     <div class="wrap">
